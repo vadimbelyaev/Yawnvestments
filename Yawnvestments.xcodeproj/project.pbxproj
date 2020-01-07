@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		DDCFAC9C237C976E00EF7452 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFAC9B237C976E00EF7452 /* AppDelegate.swift */; };
 		DDCFAC9E237C976E00EF7452 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFAC9D237C976E00EF7452 /* SceneDelegate.swift */; };
-		DDCFACA0237C976E00EF7452 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFAC9F237C976E00EF7452 /* ViewController.swift */; };
 		DDCFACA3237C976F00EF7452 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCFACA1237C976F00EF7452 /* Main.storyboard */; };
 		DDCFACA6237C976F00EF7452 /* Yawnvestments.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDCFACA4237C976F00EF7452 /* Yawnvestments.xcdatamodeld */; };
 		DDCFACA8237C977300EF7452 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDCFACA7237C977300EF7452 /* Assets.xcassets */; };
 		DDCFACAB237C977300EF7452 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCFACA9237C977300EF7452 /* LaunchScreen.storyboard */; };
 		DDCFACB6237C977400EF7452 /* YawnvestmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFACB5237C977400EF7452 /* YawnvestmentsTests.swift */; };
 		DDCFACC1237C977400EF7452 /* YawnvestmentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFACC0237C977400EF7452 /* YawnvestmentsUITests.swift */; };
+		DDE5F62623C50E0400C3B451 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5F62523C50E0400C3B451 /* TransactionsViewController.swift */; };
+		DDE5F62923C512B100C3B451 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5F62823C512B100C3B451 /* TransactionsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,6 @@
 		DDCFAC98237C976E00EF7452 /* Yawnvestments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yawnvestments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCFAC9B237C976E00EF7452 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDCFAC9D237C976E00EF7452 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DDCFAC9F237C976E00EF7452 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DDCFACA2237C976F00EF7452 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDCFACA5237C976F00EF7452 /* Yawnvestments.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Yawnvestments.xcdatamodel; sourceTree = "<group>"; };
 		DDCFACA7237C977300EF7452 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +51,8 @@
 		DDCFACBC237C977400EF7452 /* YawnvestmentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YawnvestmentsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCFACC0237C977400EF7452 /* YawnvestmentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YawnvestmentsUITests.swift; sourceTree = "<group>"; };
 		DDCFACC2237C977400EF7452 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDE5F62523C50E0400C3B451 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		DDE5F62823C512B100C3B451 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				DDCFACCE237C9E9F00EF7452 /* Model */,
-				DDCFAC9F237C976E00EF7452 /* ViewController.swift */,
+				DDE5F62423C50DD800C3B451 /* View Controllers */,
 				DDCFACD0237C9ED400EF7452 /* UI */,
 				DDCFACCF237C9EB900EF7452 /* Supporting Files */,
 			);
@@ -153,6 +155,15 @@
 				DDCFACA9237C977300EF7452 /* LaunchScreen.storyboard */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		DDE5F62423C50DD800C3B451 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DDE5F62523C50E0400C3B451 /* TransactionsViewController.swift */,
+				DDE5F62823C512B100C3B451 /* TransactionsViewModel.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,9 +297,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDCFACA0237C976E00EF7452 /* ViewController.swift in Sources */,
 				DDCFAC9C237C976E00EF7452 /* AppDelegate.swift in Sources */,
+				DDE5F62923C512B100C3B451 /* TransactionsViewModel.swift in Sources */,
 				DDCFACA6237C976F00EF7452 /* Yawnvestments.xcdatamodeld in Sources */,
+				DDE5F62623C50E0400C3B451 /* TransactionsViewController.swift in Sources */,
 				DDCFAC9E237C976E00EF7452 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
