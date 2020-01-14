@@ -23,13 +23,13 @@
             </objects>
             <point key="canvasLocation" x="-1351" y="109"/>
         </scene>
-        <!--Item-->
+        <!--Transactions Navigation Controller-->
         <scene sceneID="mFq-rm-Tnx">
             <objects>
-                <navigationController id="uUk-JM-ryE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="lI0-wx-kRC"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="26d-7d-3kZ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                <navigationController id="uUk-JM-ryE" userLabel="Transactions Navigation Controller" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Transactions" image="list.dash" catalog="system" id="lI0-wx-kRC"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="26d-7d-3kZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -40,7 +40,7 @@
             </objects>
             <point key="canvasLocation" x="-484" y="108"/>
         </scene>
-        <!--Transactions View Controller-->
+        <!--Transactions-->
         <scene sceneID="zwH-F1-Wsh">
             <objects>
                 <tableViewController id="L4g-wK-I0U" customClass="TransactionsViewController" customModule="Yawnvestments" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,11 +63,14 @@
                             <outlet property="delegate" destination="L4g-wK-I0U" id="eRV-BU-PaU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="xcH-CE-PgX"/>
+                    <navigationItem key="navigationItem" title="Transactions" id="xcH-CE-PgX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nkh-sc-4uf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="417" y="108"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="list.dash" catalog="system" width="64" height="42"/>
+    </resources>
 </document>
