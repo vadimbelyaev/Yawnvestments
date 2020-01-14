@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD27804E23CD1CE500C86642 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27804D23CD1CE500C86642 /* Transaction.swift */; };
+		DD27805023CD226E00C86642 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27804F23CD226E00C86642 /* Account.swift */; };
+		DD27805223CD228D00C86642 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27805123CD228D00C86642 /* Asset.swift */; };
+		DD27805423CD23C400C86642 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27805323CD23C400C86642 /* TransactionService.swift */; };
 		DDCFAC9C237C976E00EF7452 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFAC9B237C976E00EF7452 /* AppDelegate.swift */; };
 		DDCFAC9E237C976E00EF7452 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFAC9D237C976E00EF7452 /* SceneDelegate.swift */; };
 		DDCFACA3237C976F00EF7452 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCFACA1237C976F00EF7452 /* Main.storyboard */; };
@@ -37,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD27804D23CD1CE500C86642 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		DD27804F23CD226E00C86642 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		DD27805123CD228D00C86642 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		DD27805323CD23C400C86642 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 		DDCFAC98237C976E00EF7452 /* Yawnvestments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yawnvestments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCFAC9B237C976E00EF7452 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDCFAC9D237C976E00EF7452 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +140,10 @@
 		DDCFACCE237C9E9F00EF7452 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DD27804F23CD226E00C86642 /* Account.swift */,
+				DD27805123CD228D00C86642 /* Asset.swift */,
+				DD27804D23CD1CE500C86642 /* Transaction.swift */,
+				DD27805323CD23C400C86642 /* TransactionService.swift */,
 				DDCFACA4237C976F00EF7452 /* Yawnvestments.xcdatamodeld */,
 			);
 			path = Model;
@@ -299,9 +311,13 @@
 			files = (
 				DDCFAC9C237C976E00EF7452 /* AppDelegate.swift in Sources */,
 				DDE5F62923C512B100C3B451 /* TransactionsViewModel.swift in Sources */,
+				DD27804E23CD1CE500C86642 /* Transaction.swift in Sources */,
 				DDCFACA6237C976F00EF7452 /* Yawnvestments.xcdatamodeld in Sources */,
 				DDE5F62623C50E0400C3B451 /* TransactionsViewController.swift in Sources */,
 				DDCFAC9E237C976E00EF7452 /* SceneDelegate.swift in Sources */,
+				DD27805423CD23C400C86642 /* TransactionService.swift in Sources */,
+				DD27805223CD228D00C86642 /* Asset.swift in Sources */,
+				DD27805023CD226E00C86642 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

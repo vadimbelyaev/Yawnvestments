@@ -14,12 +14,12 @@ protocol TransactionsViewControllerType: class {
 
 class TransactionsViewController: UITableViewController, TransactionsViewControllerType {
     
-    var model: TransactionsViewModelType?
+    var model: TransactionsViewModelType!
     
     /// Intentional tight coupling for the lack of a coordinator.
     private struct ViewModelFactory {
         static func getViewModel(view: TransactionsViewControllerType) -> TransactionsViewModelType {
-            return TransactionsViewModel(view: view)
+            return TransactionsViewModel(view: view, transactionService: TransactionService.shared)
         }
     }
         
@@ -40,24 +40,24 @@ class TransactionsViewController: UITableViewController, TransactionsViewControl
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return model.numberOfSections
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return model.numberOfRowsInSection
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionViewCell", for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = ""
+        
+        if let cellViewModel = model.cellViewModel(at: indexPath) {
+            cell.textLabel?.text = "\(cellViewModel.dateString) \(cellViewModel.assetName): \(cellViewModel.amountString) from \(cellViewModel.accountName)"
+        }
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

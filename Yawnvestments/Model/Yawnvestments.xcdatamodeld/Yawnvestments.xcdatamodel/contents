@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Account" representedClassName="BrokerAccountCoreDataEntity" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Account" representedClassName=".Account" syncable="YES" codeGenerationType="category">
         <attribute name="name" attributeType="String"/>
         <attribute name="note" attributeType="String" defaultValueString=""/>
         <relationship name="creditTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="creditAccount" inverseEntity="Transaction"/>
         <relationship name="debitTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="debitAccount" inverseEntity="Transaction"/>
     </entity>
-    <entity name="Asset" representedClassName="AssetCoreDataEntity" syncable="YES" codeGenerationType="class">
+    <entity name="Asset" representedClassName=".Asset" syncable="YES" codeGenerationType="category">
         <attribute name="displayName" attributeType="String"/>
         <attribute name="note" attributeType="String" defaultValueString=""/>
         <attribute name="ticker" attributeType="String"/>
@@ -14,9 +14,9 @@
         <relationship name="buyTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="debitAsset" inverseEntity="Transaction"/>
         <relationship name="sellTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="creditAsset" inverseEntity="Transaction"/>
     </entity>
-    <entity name="Transaction" representedClassName="TransactionCoreDataEntity" syncable="YES" codeGenerationType="class">
+    <entity name="Transaction" representedClassName=".Transaction" syncable="YES" codeGenerationType="category">
         <attribute name="creditAmount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
-        <attribute name="date" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="debitAmount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="note" attributeType="String" defaultValueString=""/>
         <relationship name="associatedAsset" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Asset" inverseName="associatedTransactions" inverseEntity="Asset"/>

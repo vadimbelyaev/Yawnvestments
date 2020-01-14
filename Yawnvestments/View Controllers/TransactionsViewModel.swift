@@ -9,14 +9,67 @@
 import Foundation
 
 protocol TransactionsViewModelType: class {
-    
+    var numberOfSections: Int { get }
+    var numberOfRowsInSection: Int { get }
+    func cellViewModel(at indexPath: IndexPath) -> TransactionCellViewModelType?
+}
+
+protocol TransactionCellViewModelType {
+    var dateString: String { get }
+    var assetName: String { get }
+    var accountName: String { get }
+    var amountString: String { get }
+    var isAmountNegative: Bool { get }
+    var summary: String { get }
 }
 
 class TransactionsViewModel: TransactionsViewModelType {
     
     private weak var view: TransactionsViewControllerType?
+    private var transactionService: TransactionServiceType
     
-    init(view: TransactionsViewControllerType) {
+    init(view: TransactionsViewControllerType, transactionService: TransactionServiceType) {
         self.view = view
+        self.transactionService = transactionService
     }
+    
+    var numberOfSections: Int {
+        return 1
+    }
+    
+    var numberOfRowsInSection: Int {
+        return transactionService.numberOfTransactions
+    }
+    
+    func cellViewModel(at indexPath: IndexPath) -> TransactionCellViewModelType? {
+        guard indexPath.section == 0, let transaction = transactionService.transaction(at: indexPath.row) else {
+            return nil
+        }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.minimumFractionDigits = 2
+        numberFormatter.maximumFractionDigits = 2
+        
+        return TransactionCellViewModel.init(
+            dateString: dateFormatter.string(from: transaction.date ?? Date()),
+            assetName: transaction.debitAsset?.displayName ?? "NIL",
+            accountName: transaction.debitAccount?.name ?? "NIL",
+            amountString: numberFormatter.string(from: transaction.debitAmount ?? 0) ?? "-",
+            isAmountNegative: (transaction.debitAmount ?? 0).decimalValue < 0,
+            summary: "OMG WTF"
+        )
+    }
+}
+
+struct TransactionCellViewModel: TransactionCellViewModelType {
+    let dateString: String
+    let assetName: String
+    let accountName: String
+    let amountString: String
+    let isAmountNegative: Bool
+    let summary: String
 }
