@@ -14,15 +14,6 @@ protocol TransactionsViewModelType: class {
     func cellViewModel(at indexPath: IndexPath) -> TransactionCellViewModelType?
 }
 
-protocol TransactionCellViewModelType {
-    var dateString: String { get }
-    var assetName: String { get }
-    var accountName: String { get }
-    var amountString: String { get }
-    var isAmountNegative: Bool { get }
-    var summary: String { get }
-}
-
 class TransactionsViewModel: TransactionsViewModelType {
     
     private weak var view: TransactionsViewControllerType?
@@ -63,13 +54,4 @@ class TransactionsViewModel: TransactionsViewModelType {
             summary: "OMG WTF"
         )
     }
-}
-
-struct TransactionCellViewModel: TransactionCellViewModelType {
-    let dateString: String
-    let assetName: String
-    let accountName: String
-    let amountString: String
-    let isAmountNegative: Bool
-    let summary: String
 }

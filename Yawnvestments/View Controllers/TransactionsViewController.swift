@@ -22,6 +22,11 @@ class TransactionsViewController: UITableViewController, TransactionsViewControl
             return TransactionsViewModel(view: view, transactionService: TransactionService.shared)
         }
     }
+    
+    private enum Constants {
+        static let transactionCellNibName = String(describing: TransactionCell.self)
+        static let transactionCellReuseIndentifier = Self.transactionCellNibName
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +34,8 @@ class TransactionsViewController: UITableViewController, TransactionsViewControl
         if model == nil {
             model = ViewModelFactory.getViewModel(view: self)
         }
+        
+        tableView.register(UINib(nibName: Constants.transactionCellNibName, bundle: nil), forCellReuseIdentifier: Constants.transactionCellReuseIndentifier)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -48,14 +55,13 @@ class TransactionsViewController: UITableViewController, TransactionsViewControl
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionViewCell", for: indexPath)
-
-        cell.textLabel?.text = ""
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.transactionCellReuseIndentifier, for: indexPath) as? TransactionCell else {
+            return UITableViewCell()
+        }
         
         if let cellViewModel = model.cellViewModel(at: indexPath) {
-            cell.textLabel?.text = "\(cellViewModel.dateString) \(cellViewModel.assetName): \(cellViewModel.amountString) from \(cellViewModel.accountName)"
+            cell.model = cellViewModel
         }
-
         return cell
     }
 
