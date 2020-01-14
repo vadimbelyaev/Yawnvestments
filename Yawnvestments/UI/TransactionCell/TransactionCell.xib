@@ -18,33 +18,38 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7n8-ek-1Fs">
-                        <rect key="frame" x="0.0" y="0.0" width="285" height="83"/>
+                        <rect key="frame" x="20" y="8" width="265" height="67"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="V8K-ur-ytH">
-                                <rect key="frame" x="0.0" y="0.0" width="190.5" height="83"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="V8K-ur-ytH">
+                                <rect key="frame" x="0.0" y="0.0" width="176.5" height="67"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microsoft Corporation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7J-zt-5jg">
-                                        <rect key="frame" x="0.0" y="0.0" width="190.5" height="27.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="176.5" height="22.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sell: 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfC-o3-dsg">
-                                        <rect key="frame" x="0.0" y="27.5" width="190.5" height="28"/>
+                                        <rect key="frame" x="0.0" y="22.5" width="176.5" height="22"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31 Oct 2020 – Tinkoff IIS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qti-cY-9GZ">
-                                        <rect key="frame" x="0.0" y="55.5" width="190.5" height="27.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="176.5" height="22.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                         <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="qti-cY-9GZ" firstAttribute="width" secondItem="V8K-ur-ytH" secondAttribute="width" id="EUi-Ft-Bl7"/>
+                                    <constraint firstItem="N7J-zt-5jg" firstAttribute="width" secondItem="V8K-ur-ytH" secondAttribute="width" id="VY1-tx-iGZ"/>
+                                    <constraint firstItem="mfC-o3-dsg" firstAttribute="width" secondItem="V8K-ur-ytH" secondAttribute="width" id="azO-6q-5YD"/>
+                                </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1250.32" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBR-PH-aCb">
-                                <rect key="frame" x="198.5" y="0.0" width="86.5" height="83"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="$1250.32" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBR-PH-aCb">
+                                <rect key="frame" x="184.5" y="0.0" width="80.5" height="67"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,10 +58,10 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="7n8-ek-1Fs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8sg-9K-nue"/>
-                    <constraint firstAttribute="bottom" secondItem="7n8-ek-1Fs" secondAttribute="bottom" id="K62-QZ-1Ai"/>
+                    <constraint firstItem="7n8-ek-1Fs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="8sg-9K-nue"/>
+                    <constraint firstAttribute="bottom" secondItem="7n8-ek-1Fs" secondAttribute="bottom" constant="8" id="K62-QZ-1Ai"/>
                     <constraint firstAttribute="trailing" secondItem="7n8-ek-1Fs" secondAttribute="trailing" constant="8" id="KRk-rl-X6d"/>
-                    <constraint firstItem="7n8-ek-1Fs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gG0-nh-nhM"/>
+                    <constraint firstItem="7n8-ek-1Fs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="gG0-nh-nhM"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

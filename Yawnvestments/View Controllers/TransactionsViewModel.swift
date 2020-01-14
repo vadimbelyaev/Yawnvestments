@@ -38,20 +38,43 @@ class TransactionsViewModel: TransactionsViewModelType {
         }
 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
+        dateFormatter.dateStyle = .medium
 
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        numberFormatter.minimumFractionDigits = 2
-        numberFormatter.maximumFractionDigits = 2
+        let mainNumberFormatter = NumberFormatter()
+        mainNumberFormatter.numberStyle = .currency
+        mainNumberFormatter.locale = Locale(identifier: "en_US")
+        mainNumberFormatter.positivePrefix = "+" + mainNumberFormatter.positivePrefix
+        mainNumberFormatter.minimumFractionDigits = 2
+        mainNumberFormatter.maximumFractionDigits = 2
+
+        let secondNumberFormatter = NumberFormatter()
+        secondNumberFormatter.numberStyle = .none
+        secondNumberFormatter.minimumFractionDigits = 0
+        secondNumberFormatter.maximumFractionDigits = 0
+
+        let displayAssetName = transaction.associatedAsset?.displayName ?? "N/A"
+        let mainAmount: NSDecimalNumber?
+        let isMainAmountNegative: Bool
+        let secondAmount: NSDecimalNumber?
+        let operation: String
+        if transaction.associatedAsset == transaction.debitAsset {
+            mainAmount = (transaction.creditAmount ?? 0).multiplying(by: -1)
+            isMainAmountNegative = true
+            secondAmount = transaction.debitAmount
+            operation = "Buy: "
+        } else {
+            mainAmount = transaction.debitAmount
+            isMainAmountNegative = false
+            secondAmount = transaction.creditAmount
+            operation = "Sell: "
+        }
 
         return TransactionCellViewModel.init(
-            dateString: dateFormatter.string(from: transaction.date ?? Date()),
-            assetName: transaction.debitAsset?.displayName ?? "NIL",
-            accountName: transaction.debitAccount?.name ?? "NIL",
-            amountString: numberFormatter.string(from: transaction.debitAmount ?? 0) ?? "-",
-            isAmountNegative: (transaction.debitAmount ?? 0).decimalValue < 0,
-            summary: "OMG WTF"
+            dateAndAccountString: dateFormatter.string(from: transaction.date ?? Date()) + " – " + (transaction.debitAccount?.name ?? "N/A"),
+            assetName: displayAssetName,
+            amountString: mainNumberFormatter.string(from: mainAmount ?? 0) ?? "",
+            isAmountNegative: isMainAmountNegative,
+            summary: operation + (secondNumberFormatter.string(from: secondAmount ?? 0) ?? "")
         )
     }
 }

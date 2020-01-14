@@ -33,7 +33,12 @@ class TransactionCell: UITableViewCell {
         guard let model = model else { return }
         assetNameLabel.text = model.assetName
         summaryLabel.text = model.summary
-        dateAndAccountLabel.text = model.dateString + " — " + model.accountName
+        dateAndAccountLabel.text = model.dateAndAccountString
         amountLabel.text = model.amountString
+        if model.isAmountNegative {
+            amountLabel.textColor = .systemRed
+        } else {
+            amountLabel.textColor = .systemGreen
+        }
     }
 }
