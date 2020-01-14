@@ -9,18 +9,18 @@
 import UIKit
 
 class TransactionCell: UITableViewCell {
-    
+
     var model: TransactionCellViewModelType? {
         didSet {
             configureWithModel()
         }
     }
-    
+
     @IBOutlet weak var assetNameLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var dateAndAccountLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         assetNameLabel.text = nil
@@ -28,7 +28,7 @@ class TransactionCell: UITableViewCell {
         dateAndAccountLabel.text = nil
         amountLabel.text = nil
     }
-    
+
     private func configureWithModel() {
         guard let model = model else { return }
         assetNameLabel.text = model.assetName

@@ -15,36 +15,36 @@ protocol TransactionsViewModelType: class {
 }
 
 class TransactionsViewModel: TransactionsViewModelType {
-    
+
     private weak var view: TransactionsViewControllerType?
     private var transactionService: TransactionServiceType
-    
+
     init(view: TransactionsViewControllerType, transactionService: TransactionServiceType) {
         self.view = view
         self.transactionService = transactionService
     }
-    
+
     var numberOfSections: Int {
         return 1
     }
-    
+
     var numberOfRowsInSection: Int {
         return transactionService.numberOfTransactions
     }
-    
+
     func cellViewModel(at indexPath: IndexPath) -> TransactionCellViewModelType? {
         guard indexPath.section == 0, let transaction = transactionService.transaction(at: indexPath.row) else {
             return nil
         }
-        
+
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
-        
+
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.minimumFractionDigits = 2
         numberFormatter.maximumFractionDigits = 2
-        
+
         return TransactionCellViewModel.init(
             dateString: dateFormatter.string(from: transaction.date ?? Date()),
             assetName: transaction.debitAsset?.displayName ?? "NIL",

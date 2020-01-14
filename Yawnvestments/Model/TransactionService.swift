@@ -18,10 +18,10 @@ class TransactionService: TransactionServiceType {
     public static var shared = {
         return TransactionService(context: AppDelegate.current.persistentContainer.viewContext)
     }()
-    
+
     private let context: NSManagedObjectContext
     private let fetchResultsController: NSFetchedResultsController<Transaction>
-    
+
     init(context: NSManagedObjectContext) {
         self.context = context
         let transactionsFetchRequest: NSFetchRequest<Transaction> = Transaction.fetchRequest()
@@ -29,11 +29,11 @@ class TransactionService: TransactionServiceType {
         self.fetchResultsController = NSFetchedResultsController(fetchRequest: transactionsFetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         try? self.fetchResultsController.performFetch()
     }
-    
+
     var numberOfTransactions: Int {
         fetchResultsController.sections?.first?.numberOfObjects ?? 0
     }
-    
+
     func transaction(at index: Int) -> Transaction? {
         guard let sectionIndex = fetchResultsController.sections?.startIndex else {
             return nil

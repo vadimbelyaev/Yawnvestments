@@ -9,32 +9,32 @@
 import UIKit
 
 protocol TransactionsViewControllerType: class {
-    
+
 }
 
 class TransactionsViewController: UITableViewController, TransactionsViewControllerType {
-    
+
     var model: TransactionsViewModelType!
-    
+
     /// Intentional tight coupling for the lack of a coordinator.
     private struct ViewModelFactory {
         static func getViewModel(view: TransactionsViewControllerType) -> TransactionsViewModelType {
             return TransactionsViewModel(view: view, transactionService: TransactionService.shared)
         }
     }
-    
+
     private enum Constants {
         static let transactionCellNibName = String(describing: TransactionCell.self)
         static let transactionCellReuseIndentifier = Self.transactionCellNibName
     }
-        
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if model == nil {
             model = ViewModelFactory.getViewModel(view: self)
         }
-        
+
         tableView.register(UINib(nibName: Constants.transactionCellNibName, bundle: nil), forCellReuseIdentifier: Constants.transactionCellReuseIndentifier)
 
         // Uncomment the following line to preserve selection between presentations
@@ -58,7 +58,7 @@ class TransactionsViewController: UITableViewController, TransactionsViewControl
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.transactionCellReuseIndentifier, for: indexPath) as? TransactionCell else {
             return UITableViewCell()
         }
-        
+
         if let cellViewModel = model.cellViewModel(at: indexPath) {
             cell.model = cellViewModel
         }
