@@ -104,6 +104,24 @@
 			path = TransactionCell;
 			sourceTree = "<group>";
 		};
+		DD778FFA23CFBFE5009F9D03 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				DD27804F23CD226E00C86642 /* Account.swift */,
+				DD27805123CD228D00C86642 /* Asset.swift */,
+				DD27804D23CD1CE500C86642 /* Transaction.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		DD778FFB23CFBFF1009F9D03 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DD27805323CD23C400C86642 /* TransactionService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		DDCFAC8F237C976E00EF7452 = {
 			isa = PBXGroup;
 			children = (
@@ -156,10 +174,8 @@
 		DDCFACCE237C9E9F00EF7452 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DD27804F23CD226E00C86642 /* Account.swift */,
-				DD27805123CD228D00C86642 /* Asset.swift */,
-				DD27804D23CD1CE500C86642 /* Transaction.swift */,
-				DD27805323CD23C400C86642 /* TransactionService.swift */,
+				DD778FFA23CFBFE5009F9D03 /* Entities */,
+				DD778FFB23CFBFF1009F9D03 /* Services */,
 				DDCFACA4237C976F00EF7452 /* Yawnvestments.xcdatamodeld */,
 			);
 			path = Model;
