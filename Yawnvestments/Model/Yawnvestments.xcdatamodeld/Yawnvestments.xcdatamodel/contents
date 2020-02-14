@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Account" representedClassName=".Account" syncable="YES" codeGenerationType="category">
-        <attribute name="name" attributeType="String"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
         <attribute name="note" attributeType="String" defaultValueString=""/>
         <relationship name="creditTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="creditAccount" inverseEntity="Transaction"/>
         <relationship name="debitTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="debitAccount" inverseEntity="Transaction"/>
     </entity>
     <entity name="Asset" representedClassName=".Asset" syncable="YES" codeGenerationType="category">
-        <attribute name="displayName" attributeType="String"/>
+        <attribute name="displayName" attributeType="String" defaultValueString=""/>
         <attribute name="note" attributeType="String" defaultValueString=""/>
-        <attribute name="ticker" attributeType="String"/>
+        <attribute name="ticker" attributeType="String" defaultValueString=""/>
         <relationship name="associatedTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="associatedAsset" inverseEntity="Transaction"/>
         <relationship name="buyTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="debitAsset" inverseEntity="Transaction"/>
         <relationship name="sellTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="creditAsset" inverseEntity="Transaction"/>
