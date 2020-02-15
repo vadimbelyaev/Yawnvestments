@@ -16,12 +16,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="uUk-JM-ryE" kind="relationship" relationship="viewControllers" id="o6r-02-Jgl"/>
+                        <segue destination="cGa-kn-m2v" kind="relationship" relationship="viewControllers" id="kRr-7c-F8p"/>
+                        <segue destination="uUk-JM-ryE" kind="relationship" relationship="viewControllers" id="uFh-7r-JSM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GhV-mS-2FE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1351" y="109"/>
+            <point key="canvasLocation" x="-1426" y="-233"/>
         </scene>
         <!--Transactions Navigation Controller-->
         <scene sceneID="mFq-rm-Tnx">
@@ -39,6 +40,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7TA-iQ-IDx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-484" y="108"/>
+        </scene>
+        <!--Portfolio-->
+        <scene sceneID="RoA-ua-vSK">
+            <objects>
+                <tableViewController id="mCx-hb-cGz" customClass="PortfolioViewController" customModule="Yawnvestments" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xy8-Ot-Q5e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PortfolioCell" id="kkX-Fs-Rdh">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kkX-Fs-Rdh" id="2q2-Ze-dbL">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mCx-hb-cGz" id="gpu-PD-ZMe"/>
+                            <outlet property="delegate" destination="mCx-hb-cGz" id="mrd-Pb-77k"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Portfolio" id="otF-Bv-VDx"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="44B-5Z-LeS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="435" y="-563"/>
+        </scene>
+        <!--Portfolio-->
+        <scene sceneID="YCA-eA-iYi">
+            <objects>
+                <navigationController id="cGa-kn-m2v" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Portfolio" image="briefcase" catalog="system" id="mZw-WI-U6n"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="KmP-Gh-0rP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mCx-hb-cGz" kind="relationship" relationship="rootViewController" id="uhA-tK-10K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dof-eg-crC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-484" y="-563"/>
         </scene>
         <!--Transactions-->
         <scene sceneID="zwH-F1-Wsh">
@@ -62,6 +109,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="briefcase" catalog="system" width="64" height="50"/>
         <image name="list.dash" catalog="system" width="64" height="42"/>
     </resources>
 </document>
