@@ -36,9 +36,13 @@ class PortfolioViewModel: PortfolioViewModelType {
         guard indexPath.section == 0, let asset = assetService.asset(at: indexPath.row) else {
             return nil
         }
+
+        let quantityFormatter = NumberFormatter()
+        quantityFormatter.numberStyle = .decimal
+
         return PortfolioCellViewModel(
             assetName: asset.displayName ?? "N/A",
-            amountString: "1234.56",
+            amountString: quantityFormatter.string(from: NSDecimalNumber(decimal: asset.currentQuantity)) ?? "",
             returnRateString: "12.34 %",
             isReturnRateNegative: false
         )
