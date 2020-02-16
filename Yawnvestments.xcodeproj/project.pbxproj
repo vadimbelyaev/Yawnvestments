@@ -13,6 +13,8 @@
 		DD27805423CD23C400C86642 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27805323CD23C400C86642 /* TransactionService.swift */; };
 		DD27805823CDD76C00C86642 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27805623CDD76C00C86642 /* TransactionCell.swift */; };
 		DD27805923CDD76C00C86642 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD27805723CDD76C00C86642 /* TransactionCell.xib */; };
+		DD2B4DEC23F9ED6000FE454D /* PortfolioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2B4DEA23F9ED6000FE454D /* PortfolioCell.swift */; };
+		DD2B4DED23F9ED6000FE454D /* PortfolioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD2B4DEB23F9ED6000FE454D /* PortfolioCell.xib */; };
 		DD2E611F23CE39C100EB37FD /* TransactionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2E611E23CE39C100EB37FD /* TransactionCellViewModel.swift */; };
 		DD778FF523CFBDF7009F9D03 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD778FF423CFBDF7009F9D03 /* PortfolioViewController.swift */; };
 		DD778FF723CFBE10009F9D03 /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD778FF623CFBE10009F9D03 /* PortfolioViewModel.swift */; };
@@ -54,6 +56,8 @@
 		DD27805323CD23C400C86642 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 		DD27805623CDD76C00C86642 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		DD27805723CDD76C00C86642 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
+		DD2B4DEA23F9ED6000FE454D /* PortfolioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCell.swift; sourceTree = "<group>"; };
+		DD2B4DEB23F9ED6000FE454D /* PortfolioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortfolioCell.xib; sourceTree = "<group>"; };
 		DD2E611E23CE39C100EB37FD /* TransactionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModel.swift; sourceTree = "<group>"; };
 		DD778FF423CFBDF7009F9D03 /* PortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
 		DD778FF623CFBE10009F9D03 /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				DD7D073923F73CB600E52567 /* PortfolioCellViewModel.swift */,
+				DD2B4DEA23F9ED6000FE454D /* PortfolioCell.swift */,
+				DD2B4DEB23F9ED6000FE454D /* PortfolioCell.xib */,
 			);
 			path = PortfolioCell;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD2B4DED23F9ED6000FE454D /* PortfolioCell.xib in Resources */,
 				DDCFACAB237C977300EF7452 /* LaunchScreen.storyboard in Resources */,
 				DD27805923CDD76C00C86642 /* TransactionCell.xib in Resources */,
 				DDCFACA8237C977300EF7452 /* Assets.xcassets in Resources */,
@@ -397,6 +404,7 @@
 				DDE5F62623C50E0400C3B451 /* TransactionsViewController.swift in Sources */,
 				DDCFAC9E237C976E00EF7452 /* SceneDelegate.swift in Sources */,
 				DD27805423CD23C400C86642 /* TransactionService.swift in Sources */,
+				DD2B4DEC23F9ED6000FE454D /* PortfolioCell.swift in Sources */,
 				DD27805223CD228D00C86642 /* Asset.swift in Sources */,
 				DD7D073723F7394700E52567 /* AssetService.swift in Sources */,
 				DD27805023CD226E00C86642 /* Account.swift in Sources */,

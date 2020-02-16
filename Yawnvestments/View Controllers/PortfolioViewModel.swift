@@ -39,12 +39,20 @@ class PortfolioViewModel: PortfolioViewModelType {
 
         let quantityFormatter = NumberFormatter()
         quantityFormatter.numberStyle = .decimal
+        let formattedQuantity = quantityFormatter.string(from: NSDecimalNumber(decimal: asset.currentQuantity)) ?? ""
+
+        let randomReturnRate = Double.random(in: -2.0...2.0) //TODO: Replace random return rate with the actual implementation
+        let returnRateFormatter = NumberFormatter()
+        returnRateFormatter.numberStyle = .percent
+        returnRateFormatter.minimumFractionDigits = 2
+        returnRateFormatter.maximumFractionDigits = 2
+        let formattedReturnRate = returnRateFormatter.string(from: NSNumber(value: randomReturnRate)) ?? ""
 
         return PortfolioCellViewModel(
             assetName: asset.displayName ?? "N/A",
-            amountString: quantityFormatter.string(from: NSDecimalNumber(decimal: asset.currentQuantity)) ?? "",
-            returnRateString: "12.34 %",
-            isReturnRateNegative: false
+            amountString: formattedQuantity,
+            returnRateString: formattedReturnRate,
+            isReturnRateNegative: randomReturnRate < 0
         )
     }
 }

@@ -23,12 +23,19 @@ class PortfolioViewController: UITableViewController, PortfolioViewControllerTyp
         }
     }
 
+    private enum Constants {
+        static let portfolioCellNibName = String(describing: PortfolioCell.self)
+        static let portfolioCellReuseIndentifier = Self.portfolioCellNibName
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if model == nil {
             model = ViewModelFactory.getViewModel(view: self)
         }
+
+        tableView.register(UINib(nibName: Constants.portfolioCellNibName, bundle: nil), forCellReuseIdentifier: Constants.portfolioCellReuseIndentifier)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -48,12 +55,13 @@ class PortfolioViewController: UITableViewController, PortfolioViewControllerTyp
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PortfolioCell", for: indexPath)
-
-        guard let cellViewModel = model.cellViewModel(at: indexPath) else {
-            return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.portfolioCellReuseIndentifier, for: indexPath) as? PortfolioCell else {
+            return UITableViewCell()
         }
-        cell.textLabel?.text = "\(cellViewModel.assetName), \(cellViewModel.amountString), \(cellViewModel.returnRateString)"
+
+        if let cellViewModel = model.cellViewModel(at: indexPath) {
+            cell.model = cellViewModel
+        }
 
         return cell
     }
