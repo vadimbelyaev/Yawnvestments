@@ -18,13 +18,13 @@
 		DD778FF723CFBE10009F9D03 /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD778FF623CFBE10009F9D03 /* PortfolioViewModel.swift */; };
 		DD7D073723F7394700E52567 /* AssetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D073623F7394700E52567 /* AssetService.swift */; };
 		DD7D073A23F73CB600E52567 /* PortfolioCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D073923F73CB600E52567 /* PortfolioCellViewModel.swift */; };
+		DD7D073E23F9309C00E52567 /* AssetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D073D23F9309C00E52567 /* AssetTests.swift */; };
 		DDCFAC9C237C976E00EF7452 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFAC9B237C976E00EF7452 /* AppDelegate.swift */; };
 		DDCFAC9E237C976E00EF7452 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFAC9D237C976E00EF7452 /* SceneDelegate.swift */; };
 		DDCFACA3237C976F00EF7452 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCFACA1237C976F00EF7452 /* Main.storyboard */; };
 		DDCFACA6237C976F00EF7452 /* Yawnvestments.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDCFACA4237C976F00EF7452 /* Yawnvestments.xcdatamodeld */; };
 		DDCFACA8237C977300EF7452 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDCFACA7237C977300EF7452 /* Assets.xcassets */; };
 		DDCFACAB237C977300EF7452 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCFACA9237C977300EF7452 /* LaunchScreen.storyboard */; };
-		DDCFACB6237C977400EF7452 /* YawnvestmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFACB5237C977400EF7452 /* YawnvestmentsTests.swift */; };
 		DDCFACC1237C977400EF7452 /* YawnvestmentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFACC0237C977400EF7452 /* YawnvestmentsUITests.swift */; };
 		DDE5F62623C50E0400C3B451 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5F62523C50E0400C3B451 /* TransactionsViewController.swift */; };
 		DDE5F62923C512B100C3B451 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5F62823C512B100C3B451 /* TransactionsViewModel.swift */; };
@@ -59,6 +59,7 @@
 		DD778FF623CFBE10009F9D03 /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
 		DD7D073623F7394700E52567 /* AssetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetService.swift; sourceTree = "<group>"; };
 		DD7D073923F73CB600E52567 /* PortfolioCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCellViewModel.swift; sourceTree = "<group>"; };
+		DD7D073D23F9309C00E52567 /* AssetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTests.swift; sourceTree = "<group>"; };
 		DDCFAC98237C976E00EF7452 /* Yawnvestments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yawnvestments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCFAC9B237C976E00EF7452 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDCFAC9D237C976E00EF7452 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		DDCFACAA237C977300EF7452 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDCFACAC237C977300EF7452 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDCFACB1237C977400EF7452 /* YawnvestmentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YawnvestmentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DDCFACB5237C977400EF7452 /* YawnvestmentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YawnvestmentsTests.swift; sourceTree = "<group>"; };
 		DDCFACB7237C977400EF7452 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDCFACBC237C977400EF7452 /* YawnvestmentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YawnvestmentsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCFACC0237C977400EF7452 /* YawnvestmentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YawnvestmentsUITests.swift; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 		DDCFACB4237C977400EF7452 /* YawnvestmentsTests */ = {
 			isa = PBXGroup;
 			children = (
-				DDCFACB5237C977400EF7452 /* YawnvestmentsTests.swift */,
+				DD7D073D23F9309C00E52567 /* AssetTests.swift */,
 				DDCFACB7237C977400EF7452 /* Info.plist */,
 			);
 			path = YawnvestmentsTests;
@@ -407,7 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDCFACB6237C977400EF7452 /* YawnvestmentsTests.swift in Sources */,
+				DD7D073E23F9309C00E52567 /* AssetTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
