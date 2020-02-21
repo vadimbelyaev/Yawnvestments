@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class Asset: NSManagedObject {
+public class Asset: NSManagedObject {
     //Codegen by CoreData
 
     public var currentQuantity: Decimal {

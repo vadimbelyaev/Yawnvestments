@@ -9,6 +9,6 @@
 import Foundation
 import CoreData
 
-class Account: NSManagedObject {
+public class Account: NSManagedObject {
     //Codegen by CoreData
 }

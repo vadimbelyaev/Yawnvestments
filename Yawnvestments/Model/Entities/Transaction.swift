@@ -9,6 +9,6 @@
 import Foundation
 import CoreData
 
-class Transaction: NSManagedObject {
+public class Transaction: NSManagedObject {
     //Codegen by CoreData
 }
