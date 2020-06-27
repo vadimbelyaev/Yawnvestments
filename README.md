@@ -6,10 +6,11 @@ It's currently in the early days of development.
 
 ## Getting Started
 
-1. Make sure you have Xcode 11.2 or later installed.
+1. Install the latest stable version of Xcode.
+1. Install [CocoaPods](https://cocoapods.org)
 1. Clone this repository.
-1. Install [SwiftLint](https://github.com/realm/SwiftLint) using Homebrew.
-1. Open `Yawnvestments.xcodeproj` and run.
+1. Open Terminal, `cd` to the repository directory and run `pod install`.
+1. Open `Yawnvestments.xcworkspace` and run.
 
 ## Branches
 
