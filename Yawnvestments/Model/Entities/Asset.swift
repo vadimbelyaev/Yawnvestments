@@ -11,7 +11,10 @@ import CoreData
 
 public class Asset: NSManagedObject {
     //Codegen by CoreData
+}
 
+extension Asset {
+    
     public var currentQuantity: Decimal {
         var totalQuantity: Decimal = 0
 
