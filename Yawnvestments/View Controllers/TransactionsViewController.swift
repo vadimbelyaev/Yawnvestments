@@ -19,7 +19,7 @@ class TransactionsViewController: UITableViewController, TransactionsViewControl
     /// Intentional tight coupling for the lack of a coordinator.
     private struct ViewModelFactory {
         static func getViewModel(view: TransactionsViewControllerType) -> TransactionsViewModelType {
-            return TransactionsViewModel(view: view, transactionService: TransactionService.shared)
+            return TransactionsViewModel(view: view, doubleEntryRecordService: DoubleEntryRecordService.shared)
         }
     }
 

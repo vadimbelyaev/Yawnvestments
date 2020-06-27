@@ -17,11 +17,11 @@ protocol TransactionsViewModelType: class {
 class TransactionsViewModel: TransactionsViewModelType {
 
     private weak var view: TransactionsViewControllerType?
-    private var transactionService: TransactionServiceType
+    private var doubleEntryRecordService: DoubleEntryRecordServiceType
 
-    init(view: TransactionsViewControllerType, transactionService: TransactionServiceType) {
+    init(view: TransactionsViewControllerType, doubleEntryRecordService: DoubleEntryRecordServiceType) {
         self.view = view
-        self.transactionService = transactionService
+        self.doubleEntryRecordService = doubleEntryRecordService
     }
 
     var numberOfSections: Int {
@@ -29,11 +29,11 @@ class TransactionsViewModel: TransactionsViewModelType {
     }
 
     var numberOfRowsInSection: Int {
-        return transactionService.numberOfTransactions
+        return doubleEntryRecordService.numberOfRecords
     }
 
     func cellViewModel(at indexPath: IndexPath) -> TransactionCellViewModelType? {
-        guard indexPath.section == 0, let transaction = transactionService.transaction(at: indexPath.row) else {
+        guard indexPath.section == 0, let record = doubleEntryRecordService.record(at: indexPath.row) else {
             return nil
         }
 
@@ -52,25 +52,25 @@ class TransactionsViewModel: TransactionsViewModelType {
         secondNumberFormatter.minimumFractionDigits = 0
         secondNumberFormatter.maximumFractionDigits = 0
 
-        let displayAssetName = transaction.associatedAsset?.displayName ?? "N/A"
+        let displayAssetName = record.associatedAsset?.displayName ?? "N/A"
         let mainAmount: NSDecimalNumber?
         let isMainAmountNegative: Bool
         let secondAmount: NSDecimalNumber?
         let operation: String
-        if transaction.associatedAsset == transaction.debitAsset {
-            mainAmount = (transaction.creditAmount ?? 0).multiplying(by: -1)
+        if record.associatedAsset == record.debitTransaction?.asset {
+            mainAmount = record.creditTransaction?.amount ?? 0
             isMainAmountNegative = true
-            secondAmount = transaction.debitAmount
+            secondAmount = record.debitTransaction?.amount ?? 0
             operation = "Buy: "
         } else {
-            mainAmount = transaction.debitAmount
+            mainAmount = record.debitTransaction?.amount ?? 0
             isMainAmountNegative = false
-            secondAmount = transaction.creditAmount
+            secondAmount = record.creditTransaction?.amount ?? 0
             operation = "Sell: "
         }
 
         return TransactionCellViewModel.init(
-            dateAndAccountString: dateFormatter.string(from: transaction.date ?? Date()) + " – " + (transaction.debitAccount?.name ?? "N/A"),
+            dateAndAccountString: dateFormatter.string(from: record.date ?? Date()) + " – " + (record.debitTransaction?.account?.name ?? "N/A"),
             assetName: displayAssetName,
             amountString: mainNumberFormatter.string(from: mainAmount ?? 0) ?? "",
             isAmountNegative: isMainAmountNegative,

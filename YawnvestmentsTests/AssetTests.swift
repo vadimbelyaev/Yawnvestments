@@ -30,25 +30,37 @@ class AssetTests: XCTestCase {
         context = nil
     }
 
-    func testShouldCalculateZeroQuantity() {
+    func testShouldCalculateZeroQuantityWithNoTransactions() {
         let sut = Asset(context: context)
         XCTAssertNoThrow(try context.save())
         XCTAssertEqual(sut.currentQuantity, 0.0)
     }
 
+    func testShouldCalculateZeroQuantityWithSomeTransactions() {
+        let sut = Asset(context: context)
+        let account = Account(context: context)
+        let quantities: [Decimal] = [2.2, -3.4, 1000.5, -10.1, -667.67, -20, -301.53, 0]
+        quantities.forEach { quantity in
+            let transaction = Transaction(context: context)
+            transaction.date = Date()
+            transaction.account = account
+            transaction.asset = sut
+            transaction.amount = NSDecimalNumber(decimal: quantity)
+        }
+        XCTAssertNoThrow(try context.save())
+        XCTAssertEqual(sut.currentQuantity, 0)
+    }
+
     func testShouldCalculatePositiveQuantity() {
         let sut = Asset(context: context)
+        let account = Account(context: context)
         let quantities: [Decimal] = [5, 15, -2, -10, 30, -20]
         quantities.forEach { quantity in
             let transaction = Transaction(context: context)
             transaction.date = Date()
-            if quantity >= 0 {
-                transaction.debitAsset = sut
-                transaction.debitAmount = NSDecimalNumber(decimal: quantity)
-            } else {
-                transaction.creditAsset = sut
-                transaction.creditAmount = NSDecimalNumber(decimal: -quantity)
-            }
+            transaction.account = account
+            transaction.asset = sut
+            transaction.amount = NSDecimalNumber(decimal: quantity)
         }
         XCTAssertNoThrow(try context.save())
         XCTAssertEqual(sut.currentQuantity, 18)
@@ -56,17 +68,14 @@ class AssetTests: XCTestCase {
 
     func testShouldCalculateNegativeQuantity() {
         let sut = Asset(context: context)
+        let account = Account(context: context)
         let quantities: [Decimal] = [100, -200]
         quantities.forEach { quantity in
             let transaction = Transaction(context: context)
             transaction.date = Date()
-            if quantity >= 0 {
-                transaction.debitAsset = sut
-                transaction.debitAmount = NSDecimalNumber(decimal: quantity)
-            } else {
-                transaction.creditAsset = sut
-                transaction.creditAmount = NSDecimalNumber(decimal: -quantity)
-            }
+            transaction.account = account
+            transaction.asset = sut
+            transaction.amount = NSDecimalNumber(decimal: quantity)
         }
         XCTAssertNoThrow(try context.save())
         XCTAssertEqual(sut.currentQuantity, -100)

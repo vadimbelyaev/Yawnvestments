@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D685ABB24A7AE3F004C86AD /* DoubleEntryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685ABA24A7AE3F004C86AD /* DoubleEntryRecord.swift */; };
 		1DB4B22924A78FF700646456 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB4B22824A78FF700646456 /* Stock.swift */; };
 		1DB4B22B24A7905C00646456 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB4B22A24A7905C00646456 /* ExchangeRate.swift */; };
 		1DB4B22D24A7908700646456 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB4B22C24A7908700646456 /* Currency.swift */; };
@@ -16,7 +17,7 @@
 		DD27804E23CD1CE500C86642 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27804D23CD1CE500C86642 /* Transaction.swift */; };
 		DD27805023CD226E00C86642 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27804F23CD226E00C86642 /* Account.swift */; };
 		DD27805223CD228D00C86642 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27805123CD228D00C86642 /* Asset.swift */; };
-		DD27805423CD23C400C86642 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27805323CD23C400C86642 /* TransactionService.swift */; };
+		DD27805423CD23C400C86642 /* DoubleEntryRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27805323CD23C400C86642 /* DoubleEntryRecordService.swift */; };
 		DD27805823CDD76C00C86642 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27805623CDD76C00C86642 /* TransactionCell.swift */; };
 		DD27805923CDD76C00C86642 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD27805723CDD76C00C86642 /* TransactionCell.xib */; };
 		DD2B4DEC23F9ED6000FE454D /* PortfolioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2B4DEA23F9ED6000FE454D /* PortfolioCell.swift */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		08EB668C4B073A4BCD15EB0B /* Pods_Yawnvestments_YawnvestmentsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yawnvestments_YawnvestmentsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CB88732C9C92E6A90803E59 /* Pods-Yawnvestments-YawnvestmentsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yawnvestments-YawnvestmentsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Yawnvestments-YawnvestmentsUITests/Pods-Yawnvestments-YawnvestmentsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1D685ABA24A7AE3F004C86AD /* DoubleEntryRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleEntryRecord.swift; sourceTree = "<group>"; };
 		1DB4B22824A78FF700646456 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		1DB4B22A24A7905C00646456 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		1DB4B22C24A7908700646456 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -71,7 +73,7 @@
 		DD27804D23CD1CE500C86642 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		DD27804F23CD226E00C86642 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		DD27805123CD228D00C86642 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
-		DD27805323CD23C400C86642 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
+		DD27805323CD23C400C86642 /* DoubleEntryRecordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleEntryRecordService.swift; sourceTree = "<group>"; };
 		DD27805623CDD76C00C86642 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		DD27805723CDD76C00C86642 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		DD2B4DEA23F9ED6000FE454D /* PortfolioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCell.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				DD27804F23CD226E00C86642 /* Account.swift */,
 				DD27805123CD228D00C86642 /* Asset.swift */,
 				1DB4B22C24A7908700646456 /* Currency.swift */,
+				1D685ABA24A7AE3F004C86AD /* DoubleEntryRecord.swift */,
 				1DB4B22A24A7905C00646456 /* ExchangeRate.swift */,
 				1DB4B22824A78FF700646456 /* Stock.swift */,
 				DD27804D23CD1CE500C86642 /* Transaction.swift */,
@@ -177,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				DD7D073623F7394700E52567 /* AssetService.swift */,
-				DD27805323CD23C400C86642 /* TransactionService.swift */,
+				DD27805323CD23C400C86642 /* DoubleEntryRecordService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -539,10 +542,11 @@
 				DD7D073A23F73CB600E52567 /* PortfolioCellViewModel.swift in Sources */,
 				DD2E611F23CE39C100EB37FD /* TransactionCellViewModel.swift in Sources */,
 				DDCFACA6237C976F00EF7452 /* Yawnvestments.xcdatamodeld in Sources */,
+				1D685ABB24A7AE3F004C86AD /* DoubleEntryRecord.swift in Sources */,
 				1DB4B22D24A7908700646456 /* Currency.swift in Sources */,
 				DDE5F62623C50E0400C3B451 /* TransactionsViewController.swift in Sources */,
 				DDCFAC9E237C976E00EF7452 /* SceneDelegate.swift in Sources */,
-				DD27805423CD23C400C86642 /* TransactionService.swift in Sources */,
+				DD27805423CD23C400C86642 /* DoubleEntryRecordService.swift in Sources */,
 				DD2B4DEC23F9ED6000FE454D /* PortfolioCell.swift in Sources */,
 				DD27805223CD228D00C86642 /* Asset.swift in Sources */,
 				DD7D073723F7394700E52567 /* AssetService.swift in Sources */,

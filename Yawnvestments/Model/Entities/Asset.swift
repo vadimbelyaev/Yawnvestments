@@ -17,15 +17,10 @@ extension Asset {
     public var currentQuantity: Decimal {
         var totalQuantity: Decimal = 0
 
-        if let buyTransactions = buyTransactions as? Set<Transaction> {
-            totalQuantity += buyTransactions.reduce(0) {
-                $0 + ($1.debitAmount?.decimalValue ?? 0)
-            }
-        }
-
-        if let sellTransactions = sellTransactions as? Set<Transaction> {
-            totalQuantity -= sellTransactions.reduce(0) {
-                $0 + ($1.creditAmount?.decimalValue ?? 0)
+        if let transactions = transactions as? Set<Transaction> {
+            totalQuantity += transactions.reduce(0) {
+                print("transactions.reduce; accumulated = \($0); addition = \($1.amount?.decimalValue)")
+                return $0 + ($1.amount?.decimalValue ?? 0)
             }
         }
 

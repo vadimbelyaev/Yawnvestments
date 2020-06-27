@@ -3,20 +3,25 @@
     <entity name="Account" representedClassName=".Account" syncable="YES" codeGenerationType="category">
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <attribute name="note" attributeType="String" defaultValueString=""/>
-        <relationship name="creditTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="creditAccount" inverseEntity="Transaction"/>
-        <relationship name="debitTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="debitAccount" inverseEntity="Transaction"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="account" inverseEntity="Transaction"/>
     </entity>
     <entity name="Asset" representedClassName=".Asset" isAbstract="YES" syncable="YES" codeGenerationType="category">
         <attribute name="displayName" attributeType="String" defaultValueString=""/>
         <attribute name="note" attributeType="String" defaultValueString=""/>
         <attribute name="ticker" attributeType="String" defaultValueString=""/>
-        <relationship name="associatedTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="associatedAsset" inverseEntity="Transaction"/>
-        <relationship name="buyTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="debitAsset" inverseEntity="Transaction"/>
+        <relationship name="associatedDoubleEntryRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DoubleEntryRecord" inverseName="associatedAsset" inverseEntity="DoubleEntryRecord"/>
         <relationship name="exchangeRates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExchangeRate" inverseName="asset" inverseEntity="ExchangeRate"/>
-        <relationship name="sellTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="creditAsset" inverseEntity="Transaction"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="asset" inverseEntity="Transaction"/>
     </entity>
     <entity name="Currency" representedClassName=".Currency" parentEntity="Asset" syncable="YES" codeGenerationType="category">
         <relationship name="assetsRates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExchangeRate" inverseName="currency" inverseEntity="ExchangeRate"/>
+    </entity>
+    <entity name="DoubleEntryRecord" representedClassName=".DoubleEntryRecord" syncable="YES" codeGenerationType="category">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="note" attributeType="String" defaultValueString=""/>
+        <relationship name="associatedAsset" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Asset" inverseName="associatedDoubleEntryRecords" inverseEntity="Asset"/>
+        <relationship name="creditTransaction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Transaction" inverseName="doubleEntryRecordsCredit" inverseEntity="Transaction"/>
+        <relationship name="debitTransaction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Transaction" inverseName="doubleEntryRecordsDebit" inverseEntity="Transaction"/>
     </entity>
     <entity name="ExchangeRate" representedClassName=".ExchangeRate" syncable="YES" codeGenerationType="category">
         <attribute name="currencyAmount" attributeType="Decimal" defaultValueString="0.0"/>
@@ -26,22 +31,20 @@
     </entity>
     <entity name="Stock" representedClassName=".Stock" parentEntity="Asset" syncable="YES" codeGenerationType="category"/>
     <entity name="Transaction" representedClassName=".Transaction" syncable="YES" codeGenerationType="category">
-        <attribute name="creditAmount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="amount" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="debitAmount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
-        <attribute name="note" attributeType="String" defaultValueString=""/>
-        <relationship name="associatedAsset" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Asset" inverseName="associatedTransactions" inverseEntity="Asset"/>
-        <relationship name="creditAccount" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="creditTransactions" inverseEntity="Account"/>
-        <relationship name="creditAsset" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Asset" inverseName="sellTransactions" inverseEntity="Asset"/>
-        <relationship name="debitAccount" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="debitTransactions" inverseEntity="Account"/>
-        <relationship name="debitAsset" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Asset" inverseName="buyTransactions" inverseEntity="Asset"/>
+        <relationship name="account" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="transactions" inverseEntity="Account"/>
+        <relationship name="asset" maxCount="1" deletionRule="Nullify" destinationEntity="Asset" inverseName="transactions" inverseEntity="Asset"/>
+        <relationship name="doubleEntryRecordsCredit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DoubleEntryRecord" inverseName="creditTransaction" inverseEntity="DoubleEntryRecord"/>
+        <relationship name="doubleEntryRecordsDebit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DoubleEntryRecord" inverseName="debitTransaction" inverseEntity="DoubleEntryRecord"/>
     </entity>
     <elements>
-        <element name="Account" positionX="-575.69140625" positionY="-149.41015625" width="128" height="103"/>
-        <element name="Asset" positionX="-90.49609375" positionY="-181.43359375" width="128" height="148"/>
+        <element name="Account" positionX="-575.69140625" positionY="-149.41015625" width="128" height="88"/>
+        <element name="Asset" positionX="-90.49609375" positionY="-181.43359375" width="128" height="133"/>
         <element name="Currency" positionX="-8.80078125" positionY="56.046875" width="128" height="58"/>
+        <element name="DoubleEntryRecord" positionX="-359.19140625" positionY="-203.66796875" width="128" height="118"/>
         <element name="ExchangeRate" positionX="135.0546875" positionY="-136.546875" width="128" height="103"/>
         <element name="Stock" positionX="-160.28515625" positionY="57.88671875" width="128" height="43"/>
-        <element name="Transaction" positionX="-359.19140625" positionY="-203.66796875" width="128" height="178"/>
+        <element name="Transaction" positionX="-364.90625" positionY="23.66015625" width="128" height="133"/>
     </elements>
 </model>
