@@ -1,17 +1,15 @@
 //
 //  Transaction+CoreDataProperties.swift
-//  
+//
 //
 //  Created by Vadim Belyaev on 6/27/20.
 //
 //
 
-import Foundation
 import CoreData
-
+import Foundation
 
 extension Transaction {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Transaction> {
         return NSFetchRequest<Transaction>(entityName: "Transaction")
     }
@@ -22,5 +20,4 @@ extension Transaction {
     @NSManaged public var asset: Asset
     @NSManaged public var doubleEntryRecordsCredit: DoubleEntryRecord?
     @NSManaged public var doubleEntryRecordsDebit: DoubleEntryRecord?
-
 }

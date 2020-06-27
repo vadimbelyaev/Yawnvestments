@@ -15,7 +15,6 @@ protocol TransactionsViewModelType: class {
 }
 
 class TransactionsViewModel: TransactionsViewModelType {
-
     private weak var view: TransactionsViewControllerType?
     private var doubleEntryRecordService: DoubleEntryRecordServiceType
 
@@ -69,7 +68,7 @@ class TransactionsViewModel: TransactionsViewModelType {
             operation = "Sell: "
         }
 
-        return TransactionCellViewModel.init(
+        return TransactionCellViewModel(
             dateAndAccountString: dateFormatter.string(from: record.date) + " – " + (record.debitTransaction?.account.name ?? "N/A"),
             assetName: displayAssetName,
             amountString: mainNumberFormatter.string(from: mainAmount ?? 0) ?? "",

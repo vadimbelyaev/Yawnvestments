@@ -6,8 +6,8 @@
 //  Copyright © 2020 Vadim Belyaev. All rights reserved.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 protocol DoubleEntryRecordServiceType {
     var numberOfRecords: Int { get }
@@ -16,7 +16,7 @@ protocol DoubleEntryRecordServiceType {
 
 class DoubleEntryRecordService: DoubleEntryRecordServiceType {
     public static var shared = {
-        return DoubleEntryRecordService(context: AppDelegate.current.persistentContainer.viewContext)
+        DoubleEntryRecordService(context: AppDelegate.current.persistentContainer.viewContext)
     }()
 
     private let context: NSManagedObjectContext
@@ -27,7 +27,7 @@ class DoubleEntryRecordService: DoubleEntryRecordServiceType {
         let entriesFetchRequest: NSFetchRequest<DoubleEntryRecord> = DoubleEntryRecord.fetchRequest()
         entriesFetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \DoubleEntryRecord.date, ascending: false)]
         self.fetchResultsController = NSFetchedResultsController(fetchRequest: entriesFetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        try? self.fetchResultsController.performFetch()
+        try? fetchResultsController.performFetch()
     }
 
     var numberOfRecords: Int {

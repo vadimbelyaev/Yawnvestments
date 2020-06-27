@@ -9,17 +9,16 @@
 import UIKit
 
 class TransactionCell: UITableViewCell {
-
     var model: TransactionCellViewModelType? {
         didSet {
             configureWithModel()
         }
     }
 
-    @IBOutlet weak var assetNameLabel: UILabel!
-    @IBOutlet weak var summaryLabel: UILabel!
-    @IBOutlet weak var dateAndAccountLabel: UILabel!
-    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet var assetNameLabel: UILabel!
+    @IBOutlet var summaryLabel: UILabel!
+    @IBOutlet var dateAndAccountLabel: UILabel!
+    @IBOutlet var amountLabel: UILabel!
 
     override func prepareForReuse() {
         super.prepareForReuse()

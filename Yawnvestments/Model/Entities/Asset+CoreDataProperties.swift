@@ -1,17 +1,15 @@
 //
 //  Asset+CoreDataProperties.swift
-//  
+//
 //
 //  Created by Vadim Belyaev on 6/27/20.
 //
 //
 
-import Foundation
 import CoreData
-
+import Foundation
 
 extension Asset {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Asset> {
         return NSFetchRequest<Asset>(entityName: "Asset")
     }
@@ -22,12 +20,11 @@ extension Asset {
     @NSManaged public var associatedDoubleEntryRecords: NSSet?
     @NSManaged public var exchangeRates: NSSet?
     @NSManaged public var transactions: NSSet?
-
 }
 
 // MARK: Generated accessors for associatedDoubleEntryRecords
-extension Asset {
 
+extension Asset {
     @objc(addAssociatedDoubleEntryRecordsObject:)
     @NSManaged public func addToAssociatedDoubleEntryRecords(_ value: DoubleEntryRecord)
 
@@ -39,12 +36,11 @@ extension Asset {
 
     @objc(removeAssociatedDoubleEntryRecords:)
     @NSManaged public func removeFromAssociatedDoubleEntryRecords(_ values: NSSet)
-
 }
 
 // MARK: Generated accessors for exchangeRates
-extension Asset {
 
+extension Asset {
     @objc(addExchangeRatesObject:)
     @NSManaged public func addToExchangeRates(_ value: ExchangeRate)
 
@@ -56,12 +52,11 @@ extension Asset {
 
     @objc(removeExchangeRates:)
     @NSManaged public func removeFromExchangeRates(_ values: NSSet)
-
 }
 
 // MARK: Generated accessors for transactions
-extension Asset {
 
+extension Asset {
     @objc(addTransactionsObject:)
     @NSManaged public func addToTransactions(_ value: Transaction)
 
@@ -73,5 +68,4 @@ extension Asset {
 
     @objc(removeTransactions:)
     @NSManaged public func removeFromTransactions(_ values: NSSet)
-
 }

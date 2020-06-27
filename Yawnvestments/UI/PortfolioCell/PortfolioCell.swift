@@ -9,16 +9,15 @@
 import UIKit
 
 class PortfolioCell: UITableViewCell {
-
     var model: PortfolioCellViewModelType? {
         didSet {
             configureWithModel()
         }
     }
 
-    @IBOutlet weak var assetNameLabel: UILabel!
-    @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var returnRateLabel: UILabel!
+    @IBOutlet var assetNameLabel: UILabel!
+    @IBOutlet var amountLabel: UILabel!
+    @IBOutlet var returnRateLabel: UILabel!
 
     override func prepareForReuse() {
         super.prepareForReuse()

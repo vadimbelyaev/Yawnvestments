@@ -53,7 +53,7 @@ class AssetTests: XCTestCase {
             transaction.date = Date()
             transaction.account = account
             transaction.asset = sut
-            let decimalQuantity = Decimal.init(
+            let decimalQuantity = Decimal(
                 sign: quantityx100 >= 0 ? .plus : .minus,
                 exponent: -2,
                 significand: Decimal(abs(quantityx100))

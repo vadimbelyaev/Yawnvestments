@@ -15,7 +15,7 @@ protocol AssetServiceType {
 
 class AssetService: AssetServiceType {
     public static var shared = {
-        return AssetService(context: AppDelegate.current.persistentContainer.viewContext)
+        AssetService(context: AppDelegate.current.persistentContainer.viewContext)
     }()
 
     private let context: NSManagedObjectContext
@@ -26,7 +26,7 @@ class AssetService: AssetServiceType {
         let fetchRequest: NSFetchRequest<Asset> = Asset.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Asset.displayName, ascending: true)]
         self.fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        try? self.fetchResultsController.performFetch()
+        try? fetchResultsController.performFetch()
     }
 
     var numberOfAssets: Int {

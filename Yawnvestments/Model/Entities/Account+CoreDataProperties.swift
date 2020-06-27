@@ -1,17 +1,15 @@
 //
 //  Account+CoreDataProperties.swift
-//  
+//
 //
 //  Created by Vadim Belyaev on 6/27/20.
 //
 //
 
-import Foundation
 import CoreData
-
+import Foundation
 
 extension Account {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Account> {
         return NSFetchRequest<Account>(entityName: "Account")
     }
@@ -19,12 +17,11 @@ extension Account {
     @NSManaged public var name: String
     @NSManaged public var note: String?
     @NSManaged public var transactions: NSSet?
-
 }
 
 // MARK: Generated accessors for transactions
-extension Account {
 
+extension Account {
     @objc(addTransactionsObject:)
     @NSManaged public func addToTransactions(_ value: Transaction)
 
@@ -36,5 +33,4 @@ extension Account {
 
     @objc(removeTransactions:)
     @NSManaged public func removeFromTransactions(_ values: NSSet)
-
 }
