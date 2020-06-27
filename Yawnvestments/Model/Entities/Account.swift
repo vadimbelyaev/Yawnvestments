@@ -6,7 +6,6 @@
 //  Copyright © 2020 Vadim Belyaev. All rights reserved.
 //
 
-import Foundation
 import CoreData
 
 public class Account: NSManagedObject {

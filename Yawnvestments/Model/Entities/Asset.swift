@@ -7,7 +7,6 @@
 //
 
 import CoreData
-import Foundation
 
 public class Asset: NSManagedObject {
     // Codegen by CoreData
