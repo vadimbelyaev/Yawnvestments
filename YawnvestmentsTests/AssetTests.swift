@@ -39,13 +39,21 @@ class AssetTests: XCTestCase {
     func testShouldCalculateZeroQuantityWithSomeTransactions() {
         let sut = Asset(context: context)
         let account = Account(context: context)
-        let quantities: [Decimal] = [2.2, -3.4, 1000.5, -10.1, -667.67, -20, -301.53, 0]
-        quantities.forEach { quantity in
+
+        // Quantities in 1/100th fractions of the value
+        // (e.g. 220 is 2.2, -340 is -3.40)
+        let quantitiesx100: [Int] = [220, -340, 100050, -1010, -66767, -2000, -30153, 0]
+        quantitiesx100.forEach { quantityx100 in
             let transaction = Transaction(context: context)
             transaction.date = Date()
             transaction.account = account
             transaction.asset = sut
-            transaction.amount = NSDecimalNumber(decimal: quantity)
+            let decimalQuantity = Decimal.init(
+                sign: quantityx100 >= 0 ? .plus : .minus,
+                exponent: -2,
+                significand: Decimal(abs(quantityx100))
+            )
+            transaction.amount = NSDecimalNumber(decimal: decimalQuantity)
         }
         XCTAssertNoThrow(try context.save())
         XCTAssertEqual(sut.currentQuantity, 0)
