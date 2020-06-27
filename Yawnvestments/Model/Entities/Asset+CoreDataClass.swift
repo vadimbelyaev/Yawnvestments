@@ -1,18 +1,17 @@
 //
-//  Asset.swift
-//  Yawnvestments
+//  Asset+CoreDataClass.swift
+//  
 //
-//  Created by Vadim Belyaev on 14.01.2020.
-//  Copyright © 2020 Vadim Belyaev. All rights reserved.
+//  Created by Vadim Belyaev on 6/27/20.
+//
 //
 
+import Foundation
 import CoreData
 
-public class Asset: NSManagedObject {
-    // Codegen by CoreData
-}
 
-extension Asset {
+public class Asset: NSManagedObject {
+
     public var currentQuantity: Decimal {
         var totalQuantity: Decimal = 0
 

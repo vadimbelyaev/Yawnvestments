@@ -7,16 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D685ABB24A7AE3F004C86AD /* DoubleEntryRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D685ABA24A7AE3F004C86AD /* DoubleEntryRecord.swift */; };
-		1DB4B22924A78FF700646456 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB4B22824A78FF700646456 /* Stock.swift */; };
-		1DB4B22B24A7905C00646456 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB4B22A24A7905C00646456 /* ExchangeRate.swift */; };
-		1DB4B22D24A7908700646456 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB4B22C24A7908700646456 /* Currency.swift */; };
+		1D18E6EB24A7E9C800405809 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6E924A7E9C800405809 /* Transaction+CoreDataProperties.swift */; };
+		1D18E6EC24A7E9C800405809 /* ExchangeRate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6DD24A7E9C700405809 /* ExchangeRate+CoreDataClass.swift */; };
+		1D18E6ED24A7E9C800405809 /* Account+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6DE24A7E9C700405809 /* Account+CoreDataClass.swift */; };
+		1D18E6EE24A7E9C800405809 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6E524A7E9C800405809 /* Transaction+CoreDataClass.swift */; };
+		1D18E6EF24A7E9C800405809 /* Currency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6E824A7E9C800405809 /* Currency+CoreDataProperties.swift */; };
+		1D18E6F024A7E9C800405809 /* ExchangeRate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6E324A7E9C800405809 /* ExchangeRate+CoreDataProperties.swift */; };
+		1D18E6F124A7E9C800405809 /* Asset+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6E224A7E9C800405809 /* Asset+CoreDataProperties.swift */; };
+		1D18E6F224A7E9C800405809 /* Currency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6E024A7E9C800405809 /* Currency+CoreDataClass.swift */; };
+		1D18E6F324A7E9C800405809 /* Stock+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6E724A7E9C800405809 /* Stock+CoreDataProperties.swift */; };
+		1D18E6F424A7E9C800405809 /* DoubleEntryRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6DF24A7E9C800405809 /* DoubleEntryRecord+CoreDataProperties.swift */; };
+		1D18E6F524A7E9C800405809 /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6E424A7E9C800405809 /* Account+CoreDataProperties.swift */; };
+		1D18E6F624A7E9C800405809 /* DoubleEntryRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6E124A7E9C800405809 /* DoubleEntryRecord+CoreDataClass.swift */; };
+		1D18E6F724A7E9C800405809 /* Asset+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6E624A7E9C800405809 /* Asset+CoreDataClass.swift */; };
+		1D18E6F824A7E9C800405809 /* Stock+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6EA24A7E9C800405809 /* Stock+CoreDataClass.swift */; };
 		437EE682743E98C66ADDDA4C /* Pods_YawnvestmentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487370D6FB7D4E5F69E47AAA /* Pods_YawnvestmentsTests.framework */; };
 		89DB9A0ED0781EA93F198608 /* Pods_Yawnvestments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300244F41C5016C5FA53CA26 /* Pods_Yawnvestments.framework */; };
 		B57221E1C2D47A7476959E98 /* Pods_Yawnvestments_YawnvestmentsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EB668C4B073A4BCD15EB0B /* Pods_Yawnvestments_YawnvestmentsUITests.framework */; };
-		DD27804E23CD1CE500C86642 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27804D23CD1CE500C86642 /* Transaction.swift */; };
-		DD27805023CD226E00C86642 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27804F23CD226E00C86642 /* Account.swift */; };
-		DD27805223CD228D00C86642 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27805123CD228D00C86642 /* Asset.swift */; };
 		DD27805423CD23C400C86642 /* DoubleEntryRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27805323CD23C400C86642 /* DoubleEntryRecordService.swift */; };
 		DD27805823CDD76C00C86642 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27805623CDD76C00C86642 /* TransactionCell.swift */; };
 		DD27805923CDD76C00C86642 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD27805723CDD76C00C86642 /* TransactionCell.xib */; };
@@ -59,10 +66,20 @@
 /* Begin PBXFileReference section */
 		08EB668C4B073A4BCD15EB0B /* Pods_Yawnvestments_YawnvestmentsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yawnvestments_YawnvestmentsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CB88732C9C92E6A90803E59 /* Pods-Yawnvestments-YawnvestmentsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yawnvestments-YawnvestmentsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Yawnvestments-YawnvestmentsUITests/Pods-Yawnvestments-YawnvestmentsUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		1D685ABA24A7AE3F004C86AD /* DoubleEntryRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleEntryRecord.swift; sourceTree = "<group>"; };
-		1DB4B22824A78FF700646456 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
-		1DB4B22A24A7905C00646456 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
-		1DB4B22C24A7908700646456 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		1D18E6DD24A7E9C700405809 /* ExchangeRate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExchangeRate+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1D18E6DE24A7E9C700405809 /* Account+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1D18E6DF24A7E9C800405809 /* DoubleEntryRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DoubleEntryRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1D18E6E024A7E9C800405809 /* Currency+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1D18E6E124A7E9C800405809 /* DoubleEntryRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DoubleEntryRecord+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1D18E6E224A7E9C800405809 /* Asset+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1D18E6E324A7E9C800405809 /* ExchangeRate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExchangeRate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1D18E6E424A7E9C800405809 /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1D18E6E524A7E9C800405809 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1D18E6E624A7E9C800405809 /* Asset+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1D18E6E724A7E9C800405809 /* Stock+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stock+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1D18E6E824A7E9C800405809 /* Currency+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1D18E6E924A7E9C800405809 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1D18E6EA24A7E9C800405809 /* Stock+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stock+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2BEB887612B8060660ACF258 /* Pods-Yawnvestments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yawnvestments.debug.xcconfig"; path = "Target Support Files/Pods-Yawnvestments/Pods-Yawnvestments.debug.xcconfig"; sourceTree = "<group>"; };
 		300244F41C5016C5FA53CA26 /* Pods_Yawnvestments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yawnvestments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		487370D6FB7D4E5F69E47AAA /* Pods_YawnvestmentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YawnvestmentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,9 +87,6 @@
 		99E9167946CE07B153CF09A4 /* Pods-YawnvestmentsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YawnvestmentsTests.release.xcconfig"; path = "Target Support Files/Pods-YawnvestmentsTests/Pods-YawnvestmentsTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B1709296539F2A54C4F7463 /* Pods-YawnvestmentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YawnvestmentsTests.debug.xcconfig"; path = "Target Support Files/Pods-YawnvestmentsTests/Pods-YawnvestmentsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D482BA739939933FD087575F /* Pods-Yawnvestments-YawnvestmentsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yawnvestments-YawnvestmentsUITests.release.xcconfig"; path = "Target Support Files/Pods-Yawnvestments-YawnvestmentsUITests/Pods-Yawnvestments-YawnvestmentsUITests.release.xcconfig"; sourceTree = "<group>"; };
-		DD27804D23CD1CE500C86642 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		DD27804F23CD226E00C86642 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		DD27805123CD228D00C86642 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		DD27805323CD23C400C86642 /* DoubleEntryRecordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleEntryRecordService.swift; sourceTree = "<group>"; };
 		DD27805623CDD76C00C86642 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		DD27805723CDD76C00C86642 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
@@ -165,13 +179,20 @@
 		DD778FFA23CFBFE5009F9D03 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				DD27804F23CD226E00C86642 /* Account.swift */,
-				DD27805123CD228D00C86642 /* Asset.swift */,
-				1DB4B22C24A7908700646456 /* Currency.swift */,
-				1D685ABA24A7AE3F004C86AD /* DoubleEntryRecord.swift */,
-				1DB4B22A24A7905C00646456 /* ExchangeRate.swift */,
-				1DB4B22824A78FF700646456 /* Stock.swift */,
-				DD27804D23CD1CE500C86642 /* Transaction.swift */,
+				1D18E6DE24A7E9C700405809 /* Account+CoreDataClass.swift */,
+				1D18E6E424A7E9C800405809 /* Account+CoreDataProperties.swift */,
+				1D18E6E624A7E9C800405809 /* Asset+CoreDataClass.swift */,
+				1D18E6E224A7E9C800405809 /* Asset+CoreDataProperties.swift */,
+				1D18E6E024A7E9C800405809 /* Currency+CoreDataClass.swift */,
+				1D18E6E824A7E9C800405809 /* Currency+CoreDataProperties.swift */,
+				1D18E6E124A7E9C800405809 /* DoubleEntryRecord+CoreDataClass.swift */,
+				1D18E6DF24A7E9C800405809 /* DoubleEntryRecord+CoreDataProperties.swift */,
+				1D18E6DD24A7E9C700405809 /* ExchangeRate+CoreDataClass.swift */,
+				1D18E6E324A7E9C800405809 /* ExchangeRate+CoreDataProperties.swift */,
+				1D18E6EA24A7E9C800405809 /* Stock+CoreDataClass.swift */,
+				1D18E6E724A7E9C800405809 /* Stock+CoreDataProperties.swift */,
+				1D18E6E524A7E9C800405809 /* Transaction+CoreDataClass.swift */,
+				1D18E6E924A7E9C800405809 /* Transaction+CoreDataProperties.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -532,26 +553,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D18E6F124A7E9C800405809 /* Asset+CoreDataProperties.swift in Sources */,
 				DDCFAC9C237C976E00EF7452 /* AppDelegate.swift in Sources */,
-				1DB4B22924A78FF700646456 /* Stock.swift in Sources */,
+				1D18E6EC24A7E9C800405809 /* ExchangeRate+CoreDataClass.swift in Sources */,
 				DD778FF523CFBDF7009F9D03 /* PortfolioViewController.swift in Sources */,
+				1D18E6EE24A7E9C800405809 /* Transaction+CoreDataClass.swift in Sources */,
 				DDE5F62923C512B100C3B451 /* TransactionsViewModel.swift in Sources */,
-				DD27804E23CD1CE500C86642 /* Transaction.swift in Sources */,
 				DD778FF723CFBE10009F9D03 /* PortfolioViewModel.swift in Sources */,
 				DD27805823CDD76C00C86642 /* TransactionCell.swift in Sources */,
 				DD7D073A23F73CB600E52567 /* PortfolioCellViewModel.swift in Sources */,
+				1D18E6F324A7E9C800405809 /* Stock+CoreDataProperties.swift in Sources */,
+				1D18E6F824A7E9C800405809 /* Stock+CoreDataClass.swift in Sources */,
+				1D18E6EB24A7E9C800405809 /* Transaction+CoreDataProperties.swift in Sources */,
 				DD2E611F23CE39C100EB37FD /* TransactionCellViewModel.swift in Sources */,
 				DDCFACA6237C976F00EF7452 /* Yawnvestments.xcdatamodeld in Sources */,
-				1D685ABB24A7AE3F004C86AD /* DoubleEntryRecord.swift in Sources */,
-				1DB4B22D24A7908700646456 /* Currency.swift in Sources */,
+				1D18E6F624A7E9C800405809 /* DoubleEntryRecord+CoreDataClass.swift in Sources */,
+				1D18E6ED24A7E9C800405809 /* Account+CoreDataClass.swift in Sources */,
+				1D18E6EF24A7E9C800405809 /* Currency+CoreDataProperties.swift in Sources */,
 				DDE5F62623C50E0400C3B451 /* TransactionsViewController.swift in Sources */,
 				DDCFAC9E237C976E00EF7452 /* SceneDelegate.swift in Sources */,
 				DD27805423CD23C400C86642 /* DoubleEntryRecordService.swift in Sources */,
+				1D18E6F524A7E9C800405809 /* Account+CoreDataProperties.swift in Sources */,
+				1D18E6F024A7E9C800405809 /* ExchangeRate+CoreDataProperties.swift in Sources */,
 				DD2B4DEC23F9ED6000FE454D /* PortfolioCell.swift in Sources */,
-				DD27805223CD228D00C86642 /* Asset.swift in Sources */,
 				DD7D073723F7394700E52567 /* AssetService.swift in Sources */,
-				1DB4B22B24A7905C00646456 /* ExchangeRate.swift in Sources */,
-				DD27805023CD226E00C86642 /* Account.swift in Sources */,
+				1D18E6F724A7E9C800405809 /* Asset+CoreDataClass.swift in Sources */,
+				1D18E6F224A7E9C800405809 /* Currency+CoreDataClass.swift in Sources */,
+				1D18E6F424A7E9C800405809 /* DoubleEntryRecord+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
