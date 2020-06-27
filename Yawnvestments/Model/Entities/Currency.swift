@@ -11,4 +11,3 @@ import CoreData
 public class Currency: NSManagedObject {
     //Codegen by CoreData
 }
-

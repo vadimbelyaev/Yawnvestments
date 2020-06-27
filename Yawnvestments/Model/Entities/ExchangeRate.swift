@@ -11,4 +11,3 @@ import CoreData
 public class ExchangeRate: NSManagedObject {
     //Codegen by CoreData
 }
-
