@@ -18,8 +18,7 @@ extension Asset {
 
         if let transactions = transactions as? Set<Transaction> {
             totalQuantity += transactions.reduce(0) {
-                print("transactions.reduce; accumulated = \($0); addition = \($1.amount?.decimalValue)")
-                return $0 + ($1.amount?.decimalValue ?? 0)
+                $0 + ($1.amount?.decimalValue ?? 0)
             }
         }
 
