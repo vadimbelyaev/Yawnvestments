@@ -6,12 +6,11 @@
 //  Copyright © 2020 Vadim Belyaev. All rights reserved.
 //
 
-import XCTest
 import CoreData
+import XCTest
 @testable import Yawnvestments
 
 class AssetTests: XCTestCase {
-
     private var context: NSManagedObjectContext!
 
     override func setUp() {
@@ -19,7 +18,7 @@ class AssetTests: XCTestCase {
         let persistentStoreDescription = NSPersistentStoreDescription()
         persistentStoreDescription.type = NSInMemoryStoreType
         inMemoryContainer.persistentStoreDescriptions = [persistentStoreDescription]
-        inMemoryContainer.loadPersistentStores(completionHandler: { (_, error) in
+        inMemoryContainer.loadPersistentStores(completionHandler: { _, error in
             if let error = error as NSError? {
                 XCTFail("Failed to create an in-memory persistent container: \(error), \(error.userInfo)")
             }
@@ -72,5 +71,4 @@ class AssetTests: XCTestCase {
         XCTAssertNoThrow(try context.save())
         XCTAssertEqual(sut.currentQuantity, -100)
     }
-
 }

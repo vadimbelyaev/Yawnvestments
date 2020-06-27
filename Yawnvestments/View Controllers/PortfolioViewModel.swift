@@ -15,7 +15,6 @@ protocol PortfolioViewModelType {
 }
 
 class PortfolioViewModel: PortfolioViewModelType {
-
     private weak var view: PortfolioViewControllerType?
     private var assetService: AssetServiceType
 
@@ -41,7 +40,7 @@ class PortfolioViewModel: PortfolioViewModelType {
         quantityFormatter.numberStyle = .decimal
         let formattedQuantity = quantityFormatter.string(from: NSDecimalNumber(decimal: asset.currentQuantity)) ?? ""
 
-        let randomReturnRate = Double.random(in: -2.0...2.0) //TODO: Replace random return rate with the actual implementation
+        let randomReturnRate = Double.random(in: -2.0...2.0) // TODO: Replace random return rate with the actual implementation
         let returnRateFormatter = NumberFormatter()
         returnRateFormatter.numberStyle = .percent
         returnRateFormatter.minimumFractionDigits = 2
