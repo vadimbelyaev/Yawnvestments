@@ -17,7 +17,7 @@ public class Asset: NSManagedObject {
 
         if let transactions = transactions as? Set<Transaction> {
             totalQuantity += transactions.reduce(0) {
-                $0 + ($1.amount?.decimalValue ?? 0)
+                $0 + $1.amount.decimalValue
             }
         }
 

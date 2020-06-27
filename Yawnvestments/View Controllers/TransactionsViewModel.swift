@@ -70,7 +70,7 @@ class TransactionsViewModel: TransactionsViewModelType {
         }
 
         return TransactionCellViewModel.init(
-            dateAndAccountString: dateFormatter.string(from: record.date ?? Date()) + " – " + (record.debitTransaction?.account?.name ?? "N/A"),
+            dateAndAccountString: dateFormatter.string(from: record.date) + " – " + (record.debitTransaction?.account.name ?? "N/A"),
             assetName: displayAssetName,
             amountString: mainNumberFormatter.string(from: mainAmount ?? 0) ?? "",
             isAmountNegative: isMainAmountNegative,

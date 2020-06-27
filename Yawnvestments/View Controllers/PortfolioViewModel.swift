@@ -48,7 +48,7 @@ class PortfolioViewModel: PortfolioViewModelType {
         let formattedReturnRate = returnRateFormatter.string(from: NSNumber(value: randomReturnRate)) ?? ""
 
         return PortfolioCellViewModel(
-            assetName: asset.displayName ?? "N/A",
+            assetName: asset.displayName,
             amountString: formattedQuantity,
             returnRateString: formattedReturnRate,
             isReturnRateNegative: randomReturnRate < 0

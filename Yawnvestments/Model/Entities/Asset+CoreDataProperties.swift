@@ -16,9 +16,9 @@ extension Asset {
         return NSFetchRequest<Asset>(entityName: "Asset")
     }
 
-    @NSManaged public var displayName: String?
+    @NSManaged public var displayName: String
     @NSManaged public var note: String?
-    @NSManaged public var ticker: String?
+    @NSManaged public var ticker: String
     @NSManaged public var associatedDoubleEntryRecords: NSSet?
     @NSManaged public var exchangeRates: NSSet?
     @NSManaged public var transactions: NSSet?

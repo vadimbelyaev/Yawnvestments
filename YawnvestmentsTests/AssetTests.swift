@@ -32,13 +32,18 @@ class AssetTests: XCTestCase {
 
     func testShouldCalculateZeroQuantityWithNoTransactions() {
         let sut = Asset(context: context)
+        sut.displayName = "Zero, Inc"
+        sut.ticker = "ZERO"
         XCTAssertNoThrow(try context.save())
         XCTAssertEqual(sut.currentQuantity, 0.0)
     }
 
     func testShouldCalculateZeroQuantityWithSomeTransactions() {
         let sut = Asset(context: context)
+        sut.displayName = "Zero No Matter What, Inc"
+        sut.ticker = "ZNMW"
         let account = Account(context: context)
+        account.name = "My Brilliant Broker"
 
         // Quantities in 1/100th fractions of the value
         // (e.g. 220 is 2.2, -340 is -3.40)
@@ -61,7 +66,10 @@ class AssetTests: XCTestCase {
 
     func testShouldCalculatePositiveQuantity() {
         let sut = Asset(context: context)
+        sut.displayName = "Underground Labs X"
+        sut.ticker = "UGLX"
         let account = Account(context: context)
+        account.name = "Trustworthy"
         let quantities: [Decimal] = [5, 15, -2, -10, 30, -20]
         quantities.forEach { quantity in
             let transaction = Transaction(context: context)
@@ -76,7 +84,10 @@ class AssetTests: XCTestCase {
 
     func testShouldCalculateNegativeQuantity() {
         let sut = Asset(context: context)
+        sut.displayName = "Bankrupt Brothers"
+        sut.ticker = "CLOSED"
         let account = Account(context: context)
+        account.name = "Worst Investment Consulting Group"
         let quantities: [Decimal] = [100, -200]
         quantities.forEach { quantity in
             let transaction = Transaction(context: context)

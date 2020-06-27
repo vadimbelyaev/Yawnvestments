@@ -16,7 +16,7 @@ extension Account {
         return NSFetchRequest<Account>(entityName: "Account")
     }
 
-    @NSManaged public var name: String?
+    @NSManaged public var name: String
     @NSManaged public var note: String?
     @NSManaged public var transactions: NSSet?
 

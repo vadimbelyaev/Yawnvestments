@@ -16,7 +16,7 @@ extension DoubleEntryRecord {
         return NSFetchRequest<DoubleEntryRecord>(entityName: "DoubleEntryRecord")
     }
 
-    @NSManaged public var date: Date?
+    @NSManaged public var date: Date
     @NSManaged public var note: String?
     @NSManaged public var associatedAsset: Asset?
     @NSManaged public var creditTransaction: Transaction?

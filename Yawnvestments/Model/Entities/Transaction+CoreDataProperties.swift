@@ -16,10 +16,10 @@ extension Transaction {
         return NSFetchRequest<Transaction>(entityName: "Transaction")
     }
 
-    @NSManaged public var amount: NSDecimalNumber?
-    @NSManaged public var date: Date?
-    @NSManaged public var account: Account?
-    @NSManaged public var asset: Asset?
+    @NSManaged public var amount: NSDecimalNumber
+    @NSManaged public var date: Date
+    @NSManaged public var account: Account
+    @NSManaged public var asset: Asset
     @NSManaged public var doubleEntryRecordsCredit: DoubleEntryRecord?
     @NSManaged public var doubleEntryRecordsDebit: DoubleEntryRecord?
 

@@ -16,9 +16,9 @@ extension ExchangeRate {
         return NSFetchRequest<ExchangeRate>(entityName: "ExchangeRate")
     }
 
-    @NSManaged public var currencyAmount: NSDecimalNumber?
-    @NSManaged public var date: Date?
-    @NSManaged public var asset: Asset?
-    @NSManaged public var currency: Currency?
+    @NSManaged public var currencyAmount: NSDecimalNumber
+    @NSManaged public var date: Date
+    @NSManaged public var asset: Asset
+    @NSManaged public var currency: Currency
 
 }
