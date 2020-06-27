@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Account" representedClassName=".Account" syncable="YES" codeGenerationType="category">
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <attribute name="note" attributeType="String" defaultValueString=""/>
@@ -15,16 +15,16 @@
         <relationship name="exchangeRates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExchangeRate" inverseName="asset" inverseEntity="ExchangeRate"/>
         <relationship name="sellTransactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="creditAsset" inverseEntity="Transaction"/>
     </entity>
-    <entity name="Currency" representedClassName=".Currency" parentEntity="Asset" syncable="YES" codeGenerationType="class">
+    <entity name="Currency" representedClassName=".Currency" parentEntity="Asset" syncable="YES" codeGenerationType="category">
         <relationship name="assetsRates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExchangeRate" inverseName="currency" inverseEntity="ExchangeRate"/>
     </entity>
-    <entity name="ExchangeRate" representedClassName=".ExchangeRate" syncable="YES" codeGenerationType="class">
+    <entity name="ExchangeRate" representedClassName=".ExchangeRate" syncable="YES" codeGenerationType="category">
         <attribute name="currencyAmount" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="asset" maxCount="1" deletionRule="Cascade" destinationEntity="Asset" inverseName="exchangeRates" inverseEntity="Asset"/>
         <relationship name="currency" maxCount="1" deletionRule="Cascade" destinationEntity="Currency" inverseName="assetsRates" inverseEntity="Currency"/>
     </entity>
-    <entity name="Stock" representedClassName=".Stock" parentEntity="Asset" syncable="YES" codeGenerationType="class"/>
+    <entity name="Stock" representedClassName=".Stock" parentEntity="Asset" syncable="YES" codeGenerationType="category"/>
     <entity name="Transaction" representedClassName=".Transaction" syncable="YES" codeGenerationType="category">
         <attribute name="creditAmount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
@@ -39,9 +39,9 @@
     <elements>
         <element name="Account" positionX="-575.69140625" positionY="-149.41015625" width="128" height="103"/>
         <element name="Asset" positionX="-90.49609375" positionY="-181.43359375" width="128" height="148"/>
-        <element name="Transaction" positionX="-359.19140625" positionY="-203.66796875" width="128" height="178"/>
-        <element name="Stock" positionX="-160.28515625" positionY="57.88671875" width="128" height="43"/>
         <element name="Currency" positionX="-8.80078125" positionY="56.046875" width="128" height="58"/>
         <element name="ExchangeRate" positionX="135.0546875" positionY="-136.546875" width="128" height="103"/>
+        <element name="Stock" positionX="-160.28515625" positionY="57.88671875" width="128" height="43"/>
+        <element name="Transaction" positionX="-359.19140625" positionY="-203.66796875" width="128" height="178"/>
     </elements>
 </model>
