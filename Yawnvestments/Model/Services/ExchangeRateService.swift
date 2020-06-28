@@ -34,9 +34,9 @@ final class ExchangeRateService: ExchangeRateServiceType {
     ///   Returns `nil` if there's no price data for this asset in this currency
     ///   on any date prior to the given date.
     public func price(of asset: Asset, on date: Date, onlyIfAvailableIn currency: Currency) -> Decimal? {
-        let assetPredicate = NSPredicate(format: "%K == %@", argumentArray: ["asset", asset])
-        let datePredicate = NSPredicate(format: "%K <= %@", argumentArray: ["date", date])
-        let currencyPredicate = NSPredicate(format: "%K == %@", argumentArray: ["currency", currency])
+        let assetPredicate = NSPredicate(format: "asset == %@", argumentArray: [asset])
+        let datePredicate = NSPredicate(format: "date <= %@", argumentArray: [date])
+        let currencyPredicate = NSPredicate(format: "currency == %@", argumentArray: [currency])
         let fetchRequest: NSFetchRequest<ExchangeRate> = ExchangeRate.fetchRequest()
         fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [assetPredicate, datePredicate, currencyPredicate])
         fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \ExchangeRate.date, ascending: false)]
