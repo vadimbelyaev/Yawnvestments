@@ -9,7 +9,7 @@
 import CoreData
 
 protocol ExchangeRateServiceType {
-    func price(of asset: Asset, on date: Date, in currency: Currency) -> Decimal?
+    func price(of asset: Asset, on date: Date, onlyIfAvailableIn currency: Currency) -> Decimal?
 }
 
 final class ExchangeRateService: ExchangeRateServiceType {
@@ -33,7 +33,7 @@ final class ExchangeRateService: ExchangeRateServiceType {
     /// - Returns: the price of the asset in the currency if there's such data in the database.
     ///   Returns `nil` if there's no price data for this asset in this currency
     ///   on any date prior to the given date.
-    public func price(of asset: Asset, on date: Date, in currency: Currency) -> Decimal? {
+    public func price(of asset: Asset, on date: Date, onlyIfAvailableIn currency: Currency) -> Decimal? {
         let assetPredicate = NSPredicate(format: "%K == %@", argumentArray: ["asset", asset])
         let datePredicate = NSPredicate(format: "%K <= %@", argumentArray: ["date", date])
         let currencyPredicate = NSPredicate(format: "%K == %@", argumentArray: ["currency", currency])

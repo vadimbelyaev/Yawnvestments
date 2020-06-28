@@ -1,5 +1,5 @@
 //
-//  ExchangeRateServiceTests.swift
+//  ExchangeRateServicePriceOnlyIfAvailableInCurrencyTests.swift
 //  YawnvestmentsTests
 //
 //  Created by Vadim Personal on 6/28/20.
@@ -10,7 +10,8 @@ import CoreData
 import XCTest
 @testable import Yawnvestments
 
-class ExchangeRateServiceTests: CoreDataXCTestCase {
+//swiftlint:disable:next type_name
+class ExchangeRateServicePriceOnlyIfAvailableInCurrencyTests: CoreDataXCTestCase {
 
     func testShouldReturnEmptyPriceWithoutData() {
         let sut = ExchangeRateService(context: context)
@@ -25,7 +26,7 @@ class ExchangeRateServiceTests: CoreDataXCTestCase {
 
         XCTAssertNoThrow(try context.save())
 
-        let rate = sut.price(of: asset, on: Date.make(2020, 6, 1), in: usd)
+        let rate = sut.price(of: asset, on: Date.make(2020, 6, 1), onlyIfAvailableIn: usd)
         XCTAssertNil(rate)
     }
 
@@ -47,7 +48,7 @@ class ExchangeRateServiceTests: CoreDataXCTestCase {
         rate.currencyAmount = 2172.29
 
         XCTAssertNoThrow(try context.save())
-        XCTAssertNil(sut.price(of: asset, on: Date.make(2020, 7, 31), in: pln))
+        XCTAssertNil(sut.price(of: asset, on: Date.make(2020, 7, 31), onlyIfAvailableIn: pln))
     }
 
     func testShouldReturnAssetPriceWithSingleRecord() {
@@ -68,7 +69,7 @@ class ExchangeRateServiceTests: CoreDataXCTestCase {
         rate.currencyAmount = 42.42
 
         XCTAssertNoThrow(try context.save())
-        XCTAssertEqual(sut.price(of: asset, on: Date.make(2019, 12, 31), in: eur), 42.42)
+        XCTAssertEqual(sut.price(of: asset, on: Date.make(2019, 12, 31), onlyIfAvailableIn: eur), 42.42)
     }
 
     func testShouldReturnLatestPriceToDateOfManyRecords() {
@@ -98,7 +99,7 @@ class ExchangeRateServiceTests: CoreDataXCTestCase {
         }
 
         XCTAssertNoThrow(try context.save())
-        XCTAssertEqual(sut.price(of: asset, on: Date.make(2020, 4, 2), in: eur), 10.00)
+        XCTAssertEqual(sut.price(of: asset, on: Date.make(2020, 4, 2), onlyIfAvailableIn: eur), 10.00)
     }
 
     func testShouldIngoreOtherCurrencies() {
@@ -129,7 +130,7 @@ class ExchangeRateServiceTests: CoreDataXCTestCase {
         rateRUB.currencyAmount = 5932.07
 
         XCTAssertNoThrow(try context.save())
-        XCTAssertEqual(sut.price(of: asset, on: Date.make(2022, 8, 31), in: gbp), 150.44)
+        XCTAssertEqual(sut.price(of: asset, on: Date.make(2022, 8, 31), onlyIfAvailableIn: gbp), 150.44)
     }
 
     func testShouldIngoreOtherAssets() {
@@ -160,7 +161,7 @@ class ExchangeRateServiceTests: CoreDataXCTestCase {
         rateOfOtherAsset.currencyAmount = 333_333.33
 
         XCTAssertNoThrow(try context.save())
-        XCTAssertEqual(sut.price(of: asset, on: Date.make(2020, 3, 29), in: jpy), 888_888.88)
+        XCTAssertEqual(sut.price(of: asset, on: Date.make(2020, 3, 29), onlyIfAvailableIn: jpy), 888_888.88)
     }
 }
 

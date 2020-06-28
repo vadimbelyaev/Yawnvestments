@@ -22,7 +22,7 @@
 		1D18E6F724A7E9C800405809 /* Asset+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6E624A7E9C800405809 /* Asset+CoreDataClass.swift */; };
 		1D18E6F824A7E9C800405809 /* Stock+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6EA24A7E9C800405809 /* Stock+CoreDataClass.swift */; };
 		1D6CF31024A8775F00867BB5 /* CoreDataXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6CF30F24A8775F00867BB5 /* CoreDataXCTestCase.swift */; };
-		1D6CF31224A8796300867BB5 /* ExchangeRateServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6CF31124A8796300867BB5 /* ExchangeRateServiceTests.swift */; };
+		1D6CF31224A8796300867BB5 /* ExchangeRateServicePriceOnlyIfAvailableInCurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6CF31124A8796300867BB5 /* ExchangeRateServicePriceOnlyIfAvailableInCurrencyTests.swift */; };
 		1D6CF31424A8A90500867BB5 /* ExchangeRateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6CF31324A8A90500867BB5 /* ExchangeRateService.swift */; };
 		437EE682743E98C66ADDDA4C /* Pods_YawnvestmentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487370D6FB7D4E5F69E47AAA /* Pods_YawnvestmentsTests.framework */; };
 		89DB9A0ED0781EA93F198608 /* Pods_Yawnvestments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300244F41C5016C5FA53CA26 /* Pods_Yawnvestments.framework */; };
@@ -84,7 +84,7 @@
 		1D18E6E924A7E9C800405809 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1D18E6EA24A7E9C800405809 /* Stock+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stock+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1D6CF30F24A8775F00867BB5 /* CoreDataXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataXCTestCase.swift; sourceTree = "<group>"; };
-		1D6CF31124A8796300867BB5 /* ExchangeRateServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateServiceTests.swift; sourceTree = "<group>"; };
+		1D6CF31124A8796300867BB5 /* ExchangeRateServicePriceOnlyIfAvailableInCurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateServicePriceOnlyIfAvailableInCurrencyTests.swift; sourceTree = "<group>"; };
 		1D6CF31324A8A90500867BB5 /* ExchangeRateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateService.swift; sourceTree = "<group>"; };
 		2BEB887612B8060660ACF258 /* Pods-Yawnvestments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yawnvestments.debug.xcconfig"; path = "Target Support Files/Pods-Yawnvestments/Pods-Yawnvestments.debug.xcconfig"; sourceTree = "<group>"; };
 		300244F41C5016C5FA53CA26 /* Pods_Yawnvestments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yawnvestments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,7 +261,7 @@
 			children = (
 				DD7D073D23F9309C00E52567 /* AssetQuantityTests.swift */,
 				1D6CF30F24A8775F00867BB5 /* CoreDataXCTestCase.swift */,
-				1D6CF31124A8796300867BB5 /* ExchangeRateServiceTests.swift */,
+				1D6CF31124A8796300867BB5 /* ExchangeRateServicePriceOnlyIfAvailableInCurrencyTests.swift */,
 				DDCFACB7237C977400EF7452 /* Info.plist */,
 			);
 			path = YawnvestmentsTests;
@@ -580,7 +580,7 @@
 			files = (
 				DD7D073E23F9309C00E52567 /* AssetQuantityTests.swift in Sources */,
 				1D6CF31024A8775F00867BB5 /* CoreDataXCTestCase.swift in Sources */,
-				1D6CF31224A8796300867BB5 /* ExchangeRateServiceTests.swift in Sources */,
+				1D6CF31224A8796300867BB5 /* ExchangeRateServicePriceOnlyIfAvailableInCurrencyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
