@@ -1,5 +1,5 @@
 //
-//  AssetTests.swift
+//  AssetQuantityTests.swift
 //  YawnvestmentsTests
 //
 //  Created by Vadim Belyaev on 16.02.2020.
@@ -10,26 +10,7 @@ import CoreData
 import XCTest
 @testable import Yawnvestments
 
-class AssetTests: XCTestCase {
-    private var context: NSManagedObjectContext!
-
-    override func setUp() {
-        let inMemoryContainer = NSPersistentContainer(name: "Yawnvestments")
-        let persistentStoreDescription = NSPersistentStoreDescription()
-        persistentStoreDescription.type = NSInMemoryStoreType
-        inMemoryContainer.persistentStoreDescriptions = [persistentStoreDescription]
-        inMemoryContainer.loadPersistentStores(completionHandler: { _, error in
-            if let error = error as NSError? {
-                XCTFail("Failed to create an in-memory persistent container: \(error), \(error.userInfo)")
-            }
-        })
-        context = inMemoryContainer.viewContext
-    }
-
-    override func tearDown() {
-        context = nil
-    }
-
+class AssetQuantityTests: CoreDataXCTestCase {
     func testShouldCalculateZeroQuantityWithNoTransactions() {
         let sut = Asset(context: context)
         sut.displayName = "Zero, Inc"

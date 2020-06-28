@@ -37,6 +37,11 @@
                BlueprintName = "YawnvestmentsTests"
                ReferencedContainer = "container:Yawnvestments.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "CoreDataXCTestCase">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

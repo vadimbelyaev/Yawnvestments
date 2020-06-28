@@ -21,6 +21,9 @@
 		1D18E6F624A7E9C800405809 /* DoubleEntryRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6E124A7E9C800405809 /* DoubleEntryRecord+CoreDataClass.swift */; };
 		1D18E6F724A7E9C800405809 /* Asset+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6E624A7E9C800405809 /* Asset+CoreDataClass.swift */; };
 		1D18E6F824A7E9C800405809 /* Stock+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18E6EA24A7E9C800405809 /* Stock+CoreDataClass.swift */; };
+		1D6CF31024A8775F00867BB5 /* CoreDataXCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6CF30F24A8775F00867BB5 /* CoreDataXCTestCase.swift */; };
+		1D6CF31224A8796300867BB5 /* ExchangeRateServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6CF31124A8796300867BB5 /* ExchangeRateServiceTests.swift */; };
+		1D6CF31424A8A90500867BB5 /* ExchangeRateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6CF31324A8A90500867BB5 /* ExchangeRateService.swift */; };
 		437EE682743E98C66ADDDA4C /* Pods_YawnvestmentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487370D6FB7D4E5F69E47AAA /* Pods_YawnvestmentsTests.framework */; };
 		89DB9A0ED0781EA93F198608 /* Pods_Yawnvestments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300244F41C5016C5FA53CA26 /* Pods_Yawnvestments.framework */; };
 		B57221E1C2D47A7476959E98 /* Pods_Yawnvestments_YawnvestmentsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EB668C4B073A4BCD15EB0B /* Pods_Yawnvestments_YawnvestmentsUITests.framework */; };
@@ -34,7 +37,7 @@
 		DD778FF723CFBE10009F9D03 /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD778FF623CFBE10009F9D03 /* PortfolioViewModel.swift */; };
 		DD7D073723F7394700E52567 /* AssetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D073623F7394700E52567 /* AssetService.swift */; };
 		DD7D073A23F73CB600E52567 /* PortfolioCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D073923F73CB600E52567 /* PortfolioCellViewModel.swift */; };
-		DD7D073E23F9309C00E52567 /* AssetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D073D23F9309C00E52567 /* AssetTests.swift */; };
+		DD7D073E23F9309C00E52567 /* AssetQuantityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D073D23F9309C00E52567 /* AssetQuantityTests.swift */; };
 		DDCFAC9C237C976E00EF7452 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFAC9B237C976E00EF7452 /* AppDelegate.swift */; };
 		DDCFAC9E237C976E00EF7452 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFAC9D237C976E00EF7452 /* SceneDelegate.swift */; };
 		DDCFACA3237C976F00EF7452 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDCFACA1237C976F00EF7452 /* Main.storyboard */; };
@@ -80,6 +83,9 @@
 		1D18E6E824A7E9C800405809 /* Currency+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1D18E6E924A7E9C800405809 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1D18E6EA24A7E9C800405809 /* Stock+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stock+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1D6CF30F24A8775F00867BB5 /* CoreDataXCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataXCTestCase.swift; sourceTree = "<group>"; };
+		1D6CF31124A8796300867BB5 /* ExchangeRateServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateServiceTests.swift; sourceTree = "<group>"; };
+		1D6CF31324A8A90500867BB5 /* ExchangeRateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateService.swift; sourceTree = "<group>"; };
 		2BEB887612B8060660ACF258 /* Pods-Yawnvestments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yawnvestments.debug.xcconfig"; path = "Target Support Files/Pods-Yawnvestments/Pods-Yawnvestments.debug.xcconfig"; sourceTree = "<group>"; };
 		300244F41C5016C5FA53CA26 /* Pods_Yawnvestments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yawnvestments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		487370D6FB7D4E5F69E47AAA /* Pods_YawnvestmentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YawnvestmentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,7 +103,7 @@
 		DD778FF623CFBE10009F9D03 /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
 		DD7D073623F7394700E52567 /* AssetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetService.swift; sourceTree = "<group>"; };
 		DD7D073923F73CB600E52567 /* PortfolioCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCellViewModel.swift; sourceTree = "<group>"; };
-		DD7D073D23F9309C00E52567 /* AssetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTests.swift; sourceTree = "<group>"; };
+		DD7D073D23F9309C00E52567 /* AssetQuantityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetQuantityTests.swift; sourceTree = "<group>"; };
 		DDCFAC98237C976E00EF7452 /* Yawnvestments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yawnvestments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCFAC9B237C976E00EF7452 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDCFAC9D237C976E00EF7452 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 			children = (
 				DD7D073623F7394700E52567 /* AssetService.swift */,
 				DD27805323CD23C400C86642 /* DoubleEntryRecordService.swift */,
+				1D6CF31324A8A90500867BB5 /* ExchangeRateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -252,7 +259,9 @@
 		DDCFACB4237C977400EF7452 /* YawnvestmentsTests */ = {
 			isa = PBXGroup;
 			children = (
-				DD7D073D23F9309C00E52567 /* AssetTests.swift */,
+				DD7D073D23F9309C00E52567 /* AssetQuantityTests.swift */,
+				1D6CF30F24A8775F00867BB5 /* CoreDataXCTestCase.swift */,
+				1D6CF31124A8796300867BB5 /* ExchangeRateServiceTests.swift */,
 				DDCFACB7237C977400EF7452 /* Info.plist */,
 			);
 			path = YawnvestmentsTests;
@@ -550,6 +559,7 @@
 				DDCFACA6237C976F00EF7452 /* Yawnvestments.xcdatamodeld in Sources */,
 				1D18E6F624A7E9C800405809 /* DoubleEntryRecord+CoreDataClass.swift in Sources */,
 				1D18E6ED24A7E9C800405809 /* Account+CoreDataClass.swift in Sources */,
+				1D6CF31424A8A90500867BB5 /* ExchangeRateService.swift in Sources */,
 				1D18E6EF24A7E9C800405809 /* Currency+CoreDataProperties.swift in Sources */,
 				DDE5F62623C50E0400C3B451 /* TransactionsViewController.swift in Sources */,
 				DDCFAC9E237C976E00EF7452 /* SceneDelegate.swift in Sources */,
@@ -568,7 +578,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD7D073E23F9309C00E52567 /* AssetTests.swift in Sources */,
+				DD7D073E23F9309C00E52567 /* AssetQuantityTests.swift in Sources */,
+				1D6CF31024A8775F00867BB5 /* CoreDataXCTestCase.swift in Sources */,
+				1D6CF31224A8796300867BB5 /* ExchangeRateServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
