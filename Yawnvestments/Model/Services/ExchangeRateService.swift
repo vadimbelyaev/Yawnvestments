@@ -12,7 +12,7 @@ protocol ExchangeRateServiceType {
     func price(of asset: Asset, on date: Date, in currency: Currency) -> Decimal?
 }
 
-class ExchangeRateService: ExchangeRateServiceType {
+final class ExchangeRateService: ExchangeRateServiceType {
     public static var shared = {
         ExchangeRateService(context: AppDelegate.current.persistentContainer.viewContext)
     }()

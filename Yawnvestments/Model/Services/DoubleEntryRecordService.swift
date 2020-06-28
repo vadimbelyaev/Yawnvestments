@@ -14,7 +14,7 @@ protocol DoubleEntryRecordServiceType {
     func record(at index: Int) -> DoubleEntryRecord?
 }
 
-class DoubleEntryRecordService: DoubleEntryRecordServiceType {
+final class DoubleEntryRecordService: DoubleEntryRecordServiceType {
     public static var shared = {
         DoubleEntryRecordService(context: AppDelegate.current.persistentContainer.viewContext)
     }()

@@ -13,7 +13,7 @@ protocol AssetServiceType {
     func asset(at index: Int) -> Asset?
 }
 
-class AssetService: AssetServiceType {
+final class AssetService: AssetServiceType {
     public static var shared = {
         AssetService(context: AppDelegate.current.persistentContainer.viewContext)
     }()
