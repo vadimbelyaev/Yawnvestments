@@ -164,10 +164,3 @@ class ExchangeRateServicePriceOnlyIfAvailableInCurrencyTests: CoreDataXCTestCase
         XCTAssertEqual(sut.price(of: asset, on: Date.make(2020, 3, 29), onlyIfAvailableIn: jpy), 888_888.88)
     }
 }
-
-private extension Date {
-    static func make(_ year: Int, _ month: Int, _ day: Int) -> Date {
-        let components = DateComponents(calendar: Calendar(identifier: .gregorian), timeZone: TimeZone(secondsFromGMT: 0), year: year, month: month, day: day, hour: 0, minute: 0, second: 0, nanosecond: 0)
-        return components.date!
-    }
-}

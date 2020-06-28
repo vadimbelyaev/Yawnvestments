@@ -48,4 +48,36 @@ final class ExchangeRateService: ExchangeRateServiceType {
             fatalError("Error fetching exchange rates for asset \(asset.description) on date \(date) in currency \(currency.description): \(error)")
         }
     }
+
+    public func price(of asset: Asset, on date: Date, calculatedIn currency: Currency) -> Decimal? {
+        guard let latestPriceInAnyCurrency = priceInAnyCurrency(of: asset, on: date) else {
+            return nil
+        }
+
+        guard latestPriceInAnyCurrency.currency != currency else {
+            return latestPriceInAnyCurrency.currencyAmount.decimalValue
+        }
+
+        guard let currencyExchangeRate = price(of: latestPriceInAnyCurrency.currency, on: date, onlyIfAvailableIn: currency) else {
+            return nil
+        }
+
+        return latestPriceInAnyCurrency.currencyAmount.decimalValue * currencyExchangeRate
+    }
+
+    private func priceInAnyCurrency(of asset: Asset, on date: Date) -> ExchangeRate? {
+        let assetPredicate = NSPredicate(format: "asset == %@", argumentArray: [asset])
+        let datePredicate = NSPredicate(format: "date <= %@", argumentArray: [date])
+        let fetchRequest: NSFetchRequest<ExchangeRate> = ExchangeRate.fetchRequest()
+        fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [assetPredicate, datePredicate])
+        fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \ExchangeRate.date, ascending: false)]
+        fetchRequest.fetchLimit = 1
+        do {
+            let result = try context.fetch(fetchRequest)
+            return result.first
+        } catch {
+            fatalError("Error fetching exchange rates for asset \(asset.description) on date \(date): \(error)")
+        }
+
+    }
 }
