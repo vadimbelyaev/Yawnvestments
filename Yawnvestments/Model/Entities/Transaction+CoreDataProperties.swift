@@ -18,6 +18,6 @@ extension Transaction {
     @NSManaged public var date: Date
     @NSManaged public var account: Account
     @NSManaged public var asset: Asset
-    @NSManaged public var doubleEntryRecordsCredit: DoubleEntryRecord?
-    @NSManaged public var doubleEntryRecordsDebit: DoubleEntryRecord?
+    @NSManaged public var doubleEntryRecordsCredit: NSSet?
+    @NSManaged public var doubleEntryRecordsDebit: NSSet?
 }
