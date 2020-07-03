@@ -32,48 +32,56 @@ class TransactionsViewModel: TransactionsViewModelType {
     }
 
     func cellViewModel(at indexPath: IndexPath) -> TransactionCellViewModelType? {
-        guard indexPath.section == 0, let record = doubleEntryRecordService.record(at: indexPath.row) else {
-            return nil
+//        guard indexPath.section == 0, let record = doubleEntryRecordService.record(at: indexPath.row) else {
+//            return nil
+//        }
+//
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateStyle = .medium
+//
+//        let mainNumberFormatter = NumberFormatter()
+//        mainNumberFormatter.numberStyle = .currency
+//        mainNumberFormatter.locale = Locale(identifier: "en_US")
+//        mainNumberFormatter.positivePrefix = "+" + mainNumberFormatter.positivePrefix
+//        mainNumberFormatter.minimumFractionDigits = 2
+//        mainNumberFormatter.maximumFractionDigits = 2
+//
+//        let secondNumberFormatter = NumberFormatter()
+//        secondNumberFormatter.numberStyle = .none
+//        secondNumberFormatter.minimumFractionDigits = 0
+//        secondNumberFormatter.maximumFractionDigits = 0
+//
+//        let displayAssetName = record.associatedAsset?.displayName ?? "N/A"
+//        let mainAmount: Int?
+//        let isMainAmountNegative: Bool
+//        let secondAmount: Int?
+//        let operation: String
+//        if record.associatedAsset == record.debitTransaction?.asset {
+//            mainAmount = record.creditTransaction?.amount
+//            isMainAmountNegative = true
+//            secondAmount = record.debitTransaction?.amount
+//            operation = "Buy: "
+//        } else {
+//            mainAmount = record.debitTransaction?.amount
+//            isMainAmountNegative = false
+//            secondAmount = record.creditTransaction?.amount
+//            operation = "Sell: "
+//        }
+//
+//        return TransactionCellViewModel(
+//            dateAndAccountString: dateFormatter.string(from: record.date) + " – " + (record.debitTransaction?.account.name ?? "N/A"),
+//            assetName: displayAssetName,
+//            amountString: "", //mainNumberFormatter.string(from: mainAmount / mainFractionalMultiplier ?? 0) ?? "",
+//            isAmountNegative: isMainAmountNegative,
+//            summary: operation + "" //(secondNumberFormatter.string(from: secondAmount ?? 0) ?? "")
+//        )
+//    }
+            return TransactionCellViewModel(
+                dateAndAccountString: "N/A",
+                assetName: "N/A",
+                amountString: "N/A",
+                isAmountNegative: true,
+                summary: "N/A"
+            )
         }
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-
-        let mainNumberFormatter = NumberFormatter()
-        mainNumberFormatter.numberStyle = .currency
-        mainNumberFormatter.locale = Locale(identifier: "en_US")
-        mainNumberFormatter.positivePrefix = "+" + mainNumberFormatter.positivePrefix
-        mainNumberFormatter.minimumFractionDigits = 2
-        mainNumberFormatter.maximumFractionDigits = 2
-
-        let secondNumberFormatter = NumberFormatter()
-        secondNumberFormatter.numberStyle = .none
-        secondNumberFormatter.minimumFractionDigits = 0
-        secondNumberFormatter.maximumFractionDigits = 0
-
-        let displayAssetName = record.associatedAsset?.displayName ?? "N/A"
-        let mainAmount: NSDecimalNumber?
-        let isMainAmountNegative: Bool
-        let secondAmount: NSDecimalNumber?
-        let operation: String
-        if record.associatedAsset == record.debitTransaction?.asset {
-            mainAmount = record.creditTransaction?.amount ?? 0
-            isMainAmountNegative = true
-            secondAmount = record.debitTransaction?.amount ?? 0
-            operation = "Buy: "
-        } else {
-            mainAmount = record.debitTransaction?.amount ?? 0
-            isMainAmountNegative = false
-            secondAmount = record.creditTransaction?.amount ?? 0
-            operation = "Sell: "
-        }
-
-        return TransactionCellViewModel(
-            dateAndAccountString: dateFormatter.string(from: record.date) + " – " + (record.debitTransaction?.account.name ?? "N/A"),
-            assetName: displayAssetName,
-            amountString: mainNumberFormatter.string(from: mainAmount ?? 0) ?? "",
-            isAmountNegative: isMainAmountNegative,
-            summary: operation + (secondNumberFormatter.string(from: secondAmount ?? 0) ?? "")
-        )
-    }
 }

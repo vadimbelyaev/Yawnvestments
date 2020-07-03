@@ -43,26 +43,28 @@ final class ExchangeRateService: ExchangeRateServiceType {
         fetchRequest.fetchLimit = 1
         do {
             let result = try context.fetch(fetchRequest)
-            return result.first?.currencyAmount.decimalValue
+            return result.first?.currencyAmount?.decimalValue
         } catch {
             fatalError("Error fetching exchange rates for asset \(asset.description) on date \(date) in currency \(currency.description): \(error)")
         }
     }
 
     public func price(of asset: Asset, on date: Date, calculatedIn currency: Currency) -> Decimal? {
-        guard let latestPriceInAnyCurrency = priceInAnyCurrency(of: asset, on: date) else {
+        guard let latestPriceInAnyCurrency = priceInAnyCurrency(of: asset, on: date),
+              let amountOfLatestPrice = latestPriceInAnyCurrency.currencyAmount else {
             return nil
         }
 
-        guard latestPriceInAnyCurrency.currency != currency else {
-            return latestPriceInAnyCurrency.currencyAmount.decimalValue
+        guard let currencyOfLatestPrice = latestPriceInAnyCurrency.currency,
+              currencyOfLatestPrice != currency else {
+            return amountOfLatestPrice.decimalValue
         }
 
-        guard let currencyExchangeRate = price(of: latestPriceInAnyCurrency.currency, on: date, onlyIfAvailableIn: currency) else {
+        guard let currencyExchangeRate = price(of: currencyOfLatestPrice, on: date, onlyIfAvailableIn: currency) else {
             return nil
         }
 
-        return latestPriceInAnyCurrency.currencyAmount.decimalValue * currencyExchangeRate
+        return amountOfLatestPrice.decimalValue * currencyExchangeRate
     }
 
     private func priceInAnyCurrency(of asset: Asset, on date: Date) -> ExchangeRate? {

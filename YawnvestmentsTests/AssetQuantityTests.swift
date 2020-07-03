@@ -16,7 +16,8 @@ class AssetQuantityTests: CoreDataXCTestCase {
         sut.displayName = "Zero, Inc"
         sut.ticker = "ZERO"
         XCTAssertNoThrow(try context.save())
-        XCTAssertEqual(sut.currentQuantity, 0.0)
+        context.refresh(sut, mergeChanges: false)
+        XCTAssertEqual(sut.currentAmount, 0)
     }
 
     func testShouldCalculateZeroQuantityWithSomeTransactions() {
@@ -26,23 +27,17 @@ class AssetQuantityTests: CoreDataXCTestCase {
         let account = Account(context: context)
         account.name = "My Brilliant Broker"
 
-        // Quantities in 1/100th fractions of the value
-        // (e.g. 220 is 2.2, -340 is -3.40)
-        let quantitiesx100: [Int] = [220, -340, 100050, -1010, -66767, -2000, -30153, 0]
-        quantitiesx100.forEach { quantityx100 in
+        let amounts: [Int64] = [220, -340, 100050, -1010, -66767, -2000, -30153, 0]
+        amounts.forEach { amount in
             let transaction = Transaction(context: context)
             transaction.date = Date()
             transaction.account = account
             transaction.asset = sut
-            let decimalQuantity = Decimal(
-                sign: quantityx100 >= 0 ? .plus : .minus,
-                exponent: -2,
-                significand: Decimal(abs(quantityx100))
-            )
-            transaction.amount = NSDecimalNumber(decimal: decimalQuantity)
+            transaction.amount = amount
         }
         XCTAssertNoThrow(try context.save())
-        XCTAssertEqual(sut.currentQuantity, 0)
+        context.refresh(sut, mergeChanges: false)
+        XCTAssertEqual(sut.currentAmount, 0)
     }
 
     func testShouldCalculatePositiveQuantity() {
@@ -51,16 +46,17 @@ class AssetQuantityTests: CoreDataXCTestCase {
         sut.ticker = "UGLX"
         let account = Account(context: context)
         account.name = "Trustworthy"
-        let quantities: [Decimal] = [5, 15, -2, -10, 30, -20]
-        quantities.forEach { quantity in
+        let amounts: [Int64] = [5, 15, -2, -10, 30, -20]
+        amounts.forEach { amount in
             let transaction = Transaction(context: context)
             transaction.date = Date()
             transaction.account = account
             transaction.asset = sut
-            transaction.amount = NSDecimalNumber(decimal: quantity)
+            transaction.amount = amount
         }
         XCTAssertNoThrow(try context.save())
-        XCTAssertEqual(sut.currentQuantity, 18)
+        context.refresh(sut, mergeChanges: false)
+        XCTAssertEqual(sut.currentAmount, 18)
     }
 
     func testShouldCalculateNegativeQuantity() {
@@ -69,15 +65,16 @@ class AssetQuantityTests: CoreDataXCTestCase {
         sut.ticker = "CLOSED"
         let account = Account(context: context)
         account.name = "Worst Investment Consulting Group"
-        let quantities: [Decimal] = [100, -200]
-        quantities.forEach { quantity in
+        let amounts: [Int64] = [100, -200]
+        amounts.forEach { amount in
             let transaction = Transaction(context: context)
             transaction.date = Date()
             transaction.account = account
             transaction.asset = sut
-            transaction.amount = NSDecimalNumber(decimal: quantity)
+            transaction.amount = amount
         }
         XCTAssertNoThrow(try context.save())
-        XCTAssertEqual(sut.currentQuantity, -100)
+        context.refresh(sut, mergeChanges: false)
+        XCTAssertEqual(sut.currentAmount, -100)
     }
 }
