@@ -23,6 +23,7 @@ class ExchangeRateServicePriceCalculatedInCurrencyTests: CoreDataXCTestCase {
         let usd = Currency(context: context)
         usd.displayName = "US Dollar"
         usd.ticker = "USD"
+        usd.amountMultiplier = 100
 
         XCTAssertNoThrow(try context.save())
 
@@ -40,16 +41,18 @@ class ExchangeRateServicePriceCalculatedInCurrencyTests: CoreDataXCTestCase {
         let eur = Currency(context: context)
         eur.displayName = "Euro"
         eur.ticker = "EUR"
+        eur.amountMultiplier = 100
 
         let usd = Currency(context: context)
         usd.displayName = "US Dollar"
         usd.ticker = "USD"
+        usd.amountMultiplier = 100
 
-        let assetPriceInUSD = ExchangeRate(context: context)
-        assetPriceInUSD.asset = asset
-        assetPriceInUSD.currency = usd
-        assetPriceInUSD.date = Date.make(2020, 8, 1)
-        assetPriceInUSD.currencyAmount = 100.0
+        let assetPriceInCents = ExchangeRate(context: context)
+        assetPriceInCents.asset = asset
+        assetPriceInCents.currency = usd
+        assetPriceInCents.date = Date.make(2020, 8, 1)
+        assetPriceInCents.currencyAmount = 10000.0
 
         let usdToEur = ExchangeRate(context: context)
         usdToEur.asset = usd
@@ -58,7 +61,7 @@ class ExchangeRateServicePriceCalculatedInCurrencyTests: CoreDataXCTestCase {
         usdToEur.currencyAmount = 0.96
 
         XCTAssertNoThrow(try context.save())
-        XCTAssertEqual(sut.price(of: asset, on: Date.make(2020, 8, 2), calculatedIn: eur), 96.0)
+        XCTAssertEqual(sut.price(of: asset, on: Date.make(2020, 8, 2), calculatedIn: eur), 9600.0)
     }
 
     func testShouldReturnPriceInTheRequestedCurrencyWhenAvailable() {
@@ -71,15 +74,16 @@ class ExchangeRateServicePriceCalculatedInCurrencyTests: CoreDataXCTestCase {
         let btc = Currency(context: context)
         btc.displayName = "Bitcoin"
         btc.ticker = "BTC"
+        btc.amountMultiplier = 100000000
 
         let rate = ExchangeRate(context: context)
         rate.asset = asset
         rate.currency = btc
         rate.date = Date.make(2020, 8, 1)
-        rate.currencyAmount = 999.1
+        rate.currencyAmount = 99999.1
 
         XCTAssertNoThrow(try context.save())
-        XCTAssertEqual(sut.price(of: asset, on: Date.make(2020, 8, 2), calculatedIn: btc), 999.1)
+        XCTAssertEqual(sut.price(of: asset, on: Date.make(2020, 8, 2), calculatedIn: btc), 99999.1)
     }
 
     func testShouldReturnNilWhenNoExchangeRatesAvailable() throws {
@@ -92,10 +96,12 @@ class ExchangeRateServicePriceCalculatedInCurrencyTests: CoreDataXCTestCase {
         let nok = Currency(context: context)
         nok.displayName = "Norwegian krone"
         nok.ticker = "NOK"
+        nok.amountMultiplier = 100
 
         let cad = Currency(context: context)
         cad.displayName = "Canadian Dollar"
         cad.ticker = "🇨🇦❤️"
+        cad.amountMultiplier = 100
 
         let rate = ExchangeRate(context: context)
         rate.asset = asset

@@ -23,6 +23,7 @@ class ExchangeRateServicePriceOnlyIfAvailableInCurrencyTests: CoreDataXCTestCase
         let usd = Currency(context: context)
         usd.displayName = "US Dollar"
         usd.ticker = "USD"
+        usd.amountMultiplier = 100
 
         XCTAssertNoThrow(try context.save())
 
@@ -40,12 +41,13 @@ class ExchangeRateServicePriceOnlyIfAvailableInCurrencyTests: CoreDataXCTestCase
         let pln = Currency(context: context)
         pln.displayName = "Polish złoty"
         pln.ticker = "PLN"
+        pln.amountMultiplier = 100
 
         let rate = ExchangeRate(context: context)
         rate.asset = asset
         rate.currency = pln
         rate.date = Date.make(2192, 11, 22)
-        rate.currencyAmount = 2172.29
+        rate.currencyAmount = 217229.0
 
         XCTAssertNoThrow(try context.save())
         XCTAssertNil(sut.price(of: asset, on: Date.make(2020, 7, 31), onlyIfAvailableIn: pln))
@@ -61,15 +63,16 @@ class ExchangeRateServicePriceOnlyIfAvailableInCurrencyTests: CoreDataXCTestCase
         let eur = Currency(context: context)
         eur.displayName = "Euro"
         eur.ticker = "EUR"
+        eur.amountMultiplier = 100
 
         let rate = ExchangeRate(context: context)
         rate.asset = asset
         rate.currency = eur
         rate.date = Date.make(2019, 12, 31)
-        rate.currencyAmount = 42.42
+        rate.currencyAmount = 4242.0
 
         XCTAssertNoThrow(try context.save())
-        XCTAssertEqual(sut.price(of: asset, on: Date.make(2019, 12, 31), onlyIfAvailableIn: eur), 42.42)
+        XCTAssertEqual(sut.price(of: asset, on: Date.make(2019, 12, 31), onlyIfAvailableIn: eur), 4242.0)
     }
 
     func testShouldReturnLatestPriceToDateOfManyRecords() {
@@ -82,8 +85,9 @@ class ExchangeRateServicePriceOnlyIfAvailableInCurrencyTests: CoreDataXCTestCase
         let eur = Currency(context: context)
         eur.displayName = "Euro"
         eur.ticker = "EUR"
+        eur.amountMultiplier = 100
 
-        let rates: [(Date, NSDecimalNumber)] = [
+        let rates: [(Date, Double)] = [
             (Date.make(2020, 4, 1), 10.00),
             (Date.make(2020, 3, 31), 9.91),
             (Date.make(2020, 2, 29), 7.13),
@@ -112,10 +116,12 @@ class ExchangeRateServicePriceOnlyIfAvailableInCurrencyTests: CoreDataXCTestCase
         let gbp = Currency(context: context)
         gbp.displayName = "Pound sterling"
         gbp.ticker = "GBP"
+        gbp.amountMultiplier = 100
 
         let rub = Currency(context: context)
         rub.displayName = "Russian Rouble"
         rub.ticker = "RUB"
+        rub.amountMultiplier = 100
 
         let rateGBP = ExchangeRate(context: context)
         rateGBP.asset = asset
@@ -147,6 +153,7 @@ class ExchangeRateServicePriceOnlyIfAvailableInCurrencyTests: CoreDataXCTestCase
         let jpy = Currency(context: context)
         jpy.displayName = "Japanese yen"
         jpy.ticker = "JPY"
+        jpy.amountMultiplier = 100
 
         let rateOfAsset = ExchangeRate(context: context)
         rateOfAsset.asset = asset
