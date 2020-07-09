@@ -1,15 +1,12 @@
 //
 //  Asset+CoreDataClass.swift
-//  
 //
-//  Created by Vadim Personal on 7/1/20.
+//
+//  Created by Vadim Belyaev on 7/1/20.
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
-
-public class Asset: NSManagedObject {
-
-}
+public class Asset: NSManagedObject {}
