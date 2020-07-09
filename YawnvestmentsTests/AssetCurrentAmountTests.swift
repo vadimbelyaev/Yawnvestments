@@ -1,5 +1,5 @@
 //
-//  AssetQuantityTests.swift
+//  AssetCurrentAmountTests.swift
 //  YawnvestmentsTests
 //
 //  Created by Vadim Belyaev on 16.02.2020.
@@ -10,7 +10,7 @@ import CoreData
 import XCTest
 @testable import Yawnvestments
 
-class AssetQuantityTests: CoreDataXCTestCase {
+class AssetCurrentAmountTests: CoreDataXCTestCase {
     func testShouldCalculateZeroQuantityWithNoTransactions() {
         let sut = Asset(context: context)
         sut.displayName = "Zero, Inc"
